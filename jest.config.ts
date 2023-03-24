@@ -5,8 +5,5 @@ module.exports = {
     '<rootDir>/packages/query-graphql',
     '<rootDir>/packages/query-typeorm',
     '<rootDir>/examples',
-    '<rootDir>/packages/query-typegoose',
-    '<rootDir>/packages/query-sequelize',
-    '<rootDir>/packages/query-mongoose'
   ]
 }

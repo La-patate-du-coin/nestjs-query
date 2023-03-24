@@ -71,7 +71,7 @@ export type ResolverRelation<Relation> = {
   /**
    * Set to true if you should be able to filter on this relation.
    *
-   * This will only work with relations defined through an ORM (typeorm or sequelize).
+   * This will only work with relations defined through an ORM (typeorm).
    */
   allowFiltering?: boolean
 

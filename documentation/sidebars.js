@@ -13,8 +13,8 @@ module.exports = {
       'concepts/queries',
       'concepts/services',
       {
-        Advanced: ['concepts/advanced/assemblers'],
-      },
+        Advanced: ['concepts/advanced/assemblers']
+      }
     ],
     Persistence: [
       'persistence/services',
@@ -24,26 +24,9 @@ module.exports = {
           'persistence/typeorm/custom-service',
           'persistence/typeorm/multiple-databases',
           'persistence/typeorm/soft-delete',
-          'persistence/typeorm/testing-services',
-        ],
-        Sequelize: [
-          'persistence/sequelize/getting-started',
-          'persistence/sequelize/custom-service',
-          'persistence/sequelize/serialization',
-        ],
-        Mongoose: [
-          'persistence/mongoose/getting-started',
-          'persistence/mongoose/relations',
-          'persistence/mongoose/custom-service',
-          'persistence/mongoose/serialization',
-        ],
-        Typegoose: [
-          'persistence/typegoose/getting-started',
-          'persistence/typegoose/relations',
-          'persistence/typegoose/custom-service',
-          'persistence/typegoose/serialization',
-        ],
-      },
+          'persistence/typeorm/testing-services'
+        ]
+      }
     ],
     GraphQL: [
       'graphql/getting-started',
@@ -58,7 +41,7 @@ module.exports = {
       'graphql/subscriptions',
       'graphql/relations',
       'graphql/types',
-      'graphql/federation',
+      'graphql/federation'
     ],
     Utilities: ['utilities/query-helpers'],
     'Migration Guides': [
@@ -70,7 +53,7 @@ module.exports = {
       'migration-guides/v0.13.x-to-v0.14.x',
       'migration-guides/v0.12.x-to-v0.13.x',
       'migration-guides/v0.10.x-to-v0.11.x',
-      'migration-guides/v0.5.x-to-v0.6.x',
-    ],
-  },
+      'migration-guides/v0.5.x-to-v0.6.x'
+    ]
+  }
 }

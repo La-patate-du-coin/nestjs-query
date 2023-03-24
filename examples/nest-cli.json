@@ -101,15 +101,6 @@
         "tsConfigPath": "./tsconfig.json"
       }
     },
-    "mongoose": {
-      "type": "application",
-      "root": "mongoose",
-      "entryFile": "main",
-      "sourceRoot": "mongoose/src",
-      "compilerOptions": {
-        "tsConfigPath": "./tsconfig.json"
-      }
-    },
     "offset-paging": {
       "type": "application",
       "root": "offset-paging",
@@ -128,29 +119,11 @@
         "tsConfigPath": "./tsconfig.json"
       }
     },
-    "sequelize": {
-      "type": "application",
-      "root": "sequelize",
-      "entryFile": "main",
-      "sourceRoot": "sequelize/src",
-      "compilerOptions": {
-        "tsConfigPath": "./tsconfig.json"
-      }
-    },
     "subscriptions": {
       "type": "application",
       "root": "subscriptions",
       "entryFile": "main",
       "sourceRoot": "subscriptions/src",
-      "compilerOptions": {
-        "tsConfigPath": "./tsconfig.json"
-      }
-    },
-    "typegoose": {
-      "type": "application",
-      "root": "typegoose",
-      "entryFile": "main",
-      "sourceRoot": "typegoose/src",
       "compilerOptions": {
         "tsConfigPath": "./tsconfig.json"
       }
