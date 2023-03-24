@@ -13,8 +13,8 @@ Initial Release of `nestjs-query`.
 
 This library is composed of three packages.
 
-* [`@ptc-org/nestjs-query-core`](https://github.com/tripss/nestjs-query/tree/master/packages/core) - Defines all interfaces and utility types implemented by the other packages.
-* [`@ptc-org/nestjs-query-graphql`](https://github.com/tripss/nestjs-query/tree/master/packages/graphql) - Package that provides the graphql resolver and decorators for crud endpoints.
-* [`@ptc-org/nestjs-query-typeorm`](https://github.com/tripss/nestjs-query/tree/master/packages/typeorm) - Package that implements a Typeorm service that can be used by itself or with the graphql resolver provided by `@ptc-org/nestjs-query-graphql`.
+- [`@ptc-org/nestjs-query-core`](https://github.com/La-patate-du-coin/nestjs-query/tree/master/packages/core) - Defines all interfaces and utility types implemented by the other packages.
+- [`@ptc-org/nestjs-query-graphql`](https://github.com/La-patate-du-coin/nestjs-query/tree/master/packages/graphql) - Package that provides the graphql resolver and decorators for crud endpoints.
+- [`@ptc-org/nestjs-query-typeorm`](https://github.com/La-patate-du-coin/nestjs-query/tree/master/packages/typeorm) - Package that implements a Typeorm service that can be used by itself or with the graphql resolver provided by `@ptc-org/nestjs-query-graphql`.
 
-[To read more checkout the docs](https://tripss.github.io/nestjs-query/docs/introduction/getting-started)
+[To read more checkout the docs](https://la-patate-du-coin.github.io/nestjs-query/docs/introduction/getting-started)

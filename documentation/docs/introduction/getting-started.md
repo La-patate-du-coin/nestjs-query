@@ -24,11 +24,11 @@ Check out the [installation docs](./install.md)
 
 ## Packages
 
-Nestjs-query is composed of multiple packages
+NestJS-Query is composed of multiple packages
 
-- [`@ptc-org/nestjs-query-core`](https://github.com/tripss/nestjs-query/tree/master/packages/core) - Defines all interfaces and utility types implemented by the other packages.
-- [`@ptc-org/nestjs-query-graphql`](https://github.com/tripss/nestjs-query/tree/master/packages/query-graphql) - Package that provides the graphql resolver and decorators for crud endpoints.
-- [`@ptc-org/nestjs-query-typeorm`](https://github.com/tripss/nestjs-query/tree/master/packages/query-typeorm) - Package that implements a Typeorm service that can be used by itself or with the graphql resolver provided by `@ptc-org/nestjs-query-graphql`.
+- [`@ptc-org/nestjs-query-core`](https://github.com/La-patate-du-coin/nestjs-query/tree/master/packages/core) - Defines all interfaces and utility types implemented by the other packages.
+- [`@ptc-org/nestjs-query-graphql`](https://github.com/La-patate-du-coin/nestjs-query/tree/master/packages/query-graphql) - Package that provides the graphql resolver and decorators for crud endpoints.
+- [`@ptc-org/nestjs-query-typeorm`](https://github.com/La-patate-du-coin/nestjs-query/tree/master/packages/query-typeorm) - Package that implements a Typeorm service that can be used by itself or with the graphql resolver provided by `@ptc-org/nestjs-query-graphql`.
 
 ## Migration Guides
 

@@ -1,18 +1,18 @@
 module.exports = {
-  title: 'Nestjs-query',
+  title: 'NestJS-Query',
   tagline: 'Easy CRUD for GraphQL.',
-  url: 'https://tripss.github.io', // Your website URL
+  url: 'https://la-patate-du-coin.github.io', // Your website URL
   baseUrl: '/nestjs-query/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'tripss', // Usually your GitHub org/user name.
+  organizationName: 'La-patate-du-coin', // Usually your GitHub org/user name.
   projectName: 'nestjs-query', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'Nestjs-query',
+      title: 'NestJS-Query',
       logo: {
-        alt: 'Nestjs-query Logo',
+        alt: 'NestJS-Query Logo',
         src: 'img/logo.svg'
       },
       items: [
@@ -21,7 +21,7 @@ module.exports = {
         { to: 'docs/contributing', label: 'Contributing', position: 'left' },
         { to: 'blog', label: 'Blog', position: 'left' },
         {
-          href: 'https://github.com/tripss/nestjs-query',
+          href: 'https://github.com/La-patate-du-coin/nestjs-query',
           position: 'right',
           className: 'header-github-link',
           'aria-label': 'GitHub repository'
@@ -58,7 +58,7 @@ module.exports = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/tripss/nestjs-query'
+              href: 'https://github.com/La-patate-du-coin/nestjs-query'
             }
           ]
         }
@@ -71,12 +71,12 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/tripss/nestjs-query/edit/master/documentation/'
+          editUrl: 'https://github.com/La-patate-du-coin/nestjs-query/edit/master/documentation/'
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
-          editUrl: 'https://github.com/tripss/nestjs-query/edit/master/documentation/blog'
+          editUrl: 'https://github.com/La-patate-du-coin/nestjs-query/edit/master/documentation/blog'
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css')

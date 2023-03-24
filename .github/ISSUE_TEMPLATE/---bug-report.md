@@ -4,18 +4,18 @@ about: Create a report to help us improve
 title: ''
 labels: bug
 assignees: ''
-
 ---
 
 **Describe the bug**
 A clear and concise description of what the bug is.
 
-### Have you read the [Contributing Guidelines](https://github.com/tripss/nestjs-query/blob/master/CONTRIBUTING.md)?
+### Have you read the [Contributing Guidelines](https://github.com/La-patate-du-coin/nestjs-query/blob/master/CONTRIBUTING.md)?
 
 (Write your answer here.)
 
 **To Reproduce**
 Steps to reproduce the behavior:
+
 1. Step 1
 2. Step 2
 
@@ -26,8 +26,9 @@ A clear and concise description of what you expected to happen.
 If applicable, add screenshots to help explain your problem.
 
 **Desktop (please complete the following information):**
- - Node Version [e.g. 14.14.0]
- - Nestjs-query Version [e.g. v0.21.0]
+
+- Node Version [e.g. 14.14.0]
+- NestJS-Query Version [e.g. v0.21.0]
 
 **Additional context**
 Add any other context about the problem here.
