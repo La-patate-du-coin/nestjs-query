@@ -113,5 +113,5 @@
     "tsconfig-paths": "3.14.1",
     "typescript": "4.9.4"
   },
-  "packageManager": "yarn@3.2.1"
+  "packageManager": "yarn@3.5.0"
 }
