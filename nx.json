@@ -1,15 +1,6 @@
 {
   "extends": "nx/presets/npm.json",
   "npmScope": "ptc-org",
-  "tasksRunnerOptions": {
-    "default": {
-      "runner": "@nrwl/nx-cloud",
-      "options": {
-        "cacheableOperations": ["build", "test", "lint", "package", "prepare"],
-        "accessToken": "YWExNTY0MWYtYWMzNy00ZWZkLWIzMWEtMGYzYWY4YWRmMDE1fHJlYWQtd3JpdGU="
-      }
-    }
-  },
   "workspaceLayout": {
     "libsDir": "packages",
     "appsDir": ""

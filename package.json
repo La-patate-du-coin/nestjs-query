@@ -61,7 +61,6 @@
     "@nrwl/js": "15.8.8",
     "@nrwl/linter": "15.8.8",
     "@nrwl/node": "15.8.8",
-    "@nrwl/nx-cloud": "15.3.2",
     "@nx-plus/docusaurus": "^15.0.0-rc.0",
     "@types/express": "4.17.16",
     "@types/jest": "28.1.8",
