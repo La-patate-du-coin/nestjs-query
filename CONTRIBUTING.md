@@ -1,3 +1,5 @@
+**:warning: This documentation is out of date**
+
 `nestjs-query` welcomes any contribution!
 
 For all feature, bug and pull requests please adhere to the following **golden rule**:

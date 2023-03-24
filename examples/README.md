@@ -1,3 +1,5 @@
+**:warning: This documentation is out of date**
+
 `nestjs-query` examples.
 
 ## Usage
