@@ -54,8 +54,8 @@
   },
   "devDependencies": {
     "@actions/core": "^1.10.0",
-    "@commitlint/cli": "17.4.2",
-    "@commitlint/config-conventional": "^17.4.2",
+    "@commitlint/cli": "17.5.0",
+    "@commitlint/config-conventional": "^17.4.4",
     "@jscutlery/semver": "2.26.0",
     "@nestjs/cli": "9.3.0",
     "@nestjs/schematics": "9.0.4",
