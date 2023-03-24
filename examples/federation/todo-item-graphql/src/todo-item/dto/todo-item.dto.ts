@@ -1,5 +1,5 @@
+import { FilterableField, Reference } from '@la-patate-du-coin/nestjs-query-graphql'
 import { Directive, GraphQLISODateTime, ID, ObjectType } from '@nestjs/graphql'
-import { FilterableField, Reference } from '@ptc-org/nestjs-query-graphql'
 
 import { UserReferenceDTO } from './user-reference.dto'
 

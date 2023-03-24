@@ -8,7 +8,7 @@ import {
   QueryService,
   SelectRelation,
   UpdateManyResponse
-} from '@ptc-org/nestjs-query-core'
+} from '@la-patate-du-coin/nestjs-query-core'
 
 import { TodoItemDTO } from './dto/todo-item.dto'
 import { TodoItemInputDTO } from './dto/todo-item-input.dto'

@@ -1,6 +1,6 @@
+import { InjectQueryService, QueryService } from '@la-patate-du-coin/nestjs-query-core'
 import { Injectable, UnauthorizedException } from '@nestjs/common'
 import { JwtService } from '@nestjs/jwt'
-import { InjectQueryService, QueryService } from '@ptc-org/nestjs-query-core'
 
 import { UserDTO } from '../user/user.dto'
 import { UserEntity } from '../user/user.entity'

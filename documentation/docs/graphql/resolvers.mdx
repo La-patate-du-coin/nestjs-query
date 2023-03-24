@@ -22,8 +22,8 @@ The easiest way to get started is to use the `@NestjsQueryGraphQLModule`. The `N
 <TabItem value="typeorm">
 
 ```ts title="todo-item.module.ts"
-import { NestjsQueryGraphQLModule } from '@ptc-org/nestjs-query-graphql'
-import { NestjsQueryTypeOrmModule } from '@ptc-org/nestjs-query-typeorm'
+import { NestjsQueryGraphQLModule } from '@la-patate-du-coin/nestjs-query-graphql'
+import { NestjsQueryTypeOrmModule } from '@la-patate-du-coin/nestjs-query-typeorm'
 import { Module } from '@nestjs/common'
 import { TodoItemDTO } from './todo-item.dto'
 import { TodoItemEntity } from './todo-item.entity'
@@ -67,8 +67,8 @@ otherwise relations will not work.
 :::
 
 ```ts title="todo-item.resolver.ts"
-import { QueryService, InjectQueryService } from '@ptc-org/nestjs-query-core'
-import { CRUDResolver } from '@ptc-org/nestjs-query-graphql'
+import { QueryService, InjectQueryService } from '@la-patate-du-coin/nestjs-query-core'
+import { CRUDResolver } from '@la-patate-du-coin/nestjs-query-graphql'
 import { Resolver, Query, Args } from '@nestjs/graphql'
 import { TodoItemDTO } from './dto/todo-item.dto'
 import { TodoItemEntity } from './todo-item.entity'
@@ -97,8 +97,8 @@ Notice how the `dtos` property is specified instead of the resolvers, this allow
 <TabItem value="typeorm">
 
 ```ts title="todo-item.module.ts" {9,13}
-import { NestjsQueryGraphQLModule } from '@ptc-org/nestjs-query-graphql';
-import { NestjsQueryTypeOrmModule } from '@ptc-org/nestjs-query-typeorm';
+import { NestjsQueryGraphQLModule } from '@la-patate-du-coin/nestjs-query-graphql';
+import { NestjsQueryTypeOrmModule } from '@la-patate-du-coin/nestjs-query-typeorm';
 import { Module } from '@nestjs/common';
 import { TodoItemDTO } from './todo-item.dto';
 import { TodoItemEntity } from './todo-item.entity';
@@ -247,8 +247,8 @@ We can then update our resolver to use the new `TodoItemInputDTO`
 <TabItem value="module">
 
 ```ts title="todo-item.module.ts"
-import { NestjsQueryGraphQLModule } from '@ptc-org/nestjs-query-graphql'
-import { NestjsQueryTypeOrmModule } from '@ptc-org/nestjs-query-typeorm'
+import { NestjsQueryGraphQLModule } from '@la-patate-du-coin/nestjs-query-graphql'
+import { NestjsQueryTypeOrmModule } from '@la-patate-du-coin/nestjs-query-typeorm'
 import { Module } from '@nestjs/common'
 import { TodoItemInputDTO } from './todo-item.input'
 import { TodoItemDTO } from './todo-item.dto'
@@ -276,8 +276,8 @@ export class TodoItemModule {}
 <TabItem value="resolver">
 
 ```ts title="todo-item.resolver.ts"
-import { QueryService, InjectQueryService } from '@ptc-org/nestjs-query-core'
-import { CRUDResolver } from '@ptc-org/nestjs-query-graphql'
+import { QueryService, InjectQueryService } from '@la-patate-du-coin/nestjs-query-core'
+import { CRUDResolver } from '@la-patate-du-coin/nestjs-query-graphql'
 import { Resolver } from '@nestjs/graphql'
 import { TodoItemInputDTO } from './todo-item.input'
 import { TodoItemDTO } from './todo-item.dto'
@@ -317,8 +317,8 @@ In this example we disable all `create` endpoints
 <TabItem value="module">
 
 ```ts title="todo-item.module.ts"
-import { NestjsQueryGraphQLModule } from '@ptc-org/nestjs-query-graphql'
-import { NestjsQueryTypeOrmModule } from '@ptc-org/nestjs-query-typeorm'
+import { NestjsQueryGraphQLModule } from '@la-patate-du-coin/nestjs-query-graphql'
+import { NestjsQueryTypeOrmModule } from '@la-patate-du-coin/nestjs-query-typeorm'
 import { Module } from '@nestjs/common'
 import { TodoItemDTO } from './todo-item.dto'
 import { TodoItemEntity } from './todo-item.entity'
@@ -344,8 +344,8 @@ export class TodoItemModule {}
 <TabItem value="resolver">
 
 ```ts title="todo-item.resolver.ts"
-import { QueryService, InjectQueryService } from '@ptc-org/nestjs-query-core'
-import { CRUDResolver } from '@ptc-org/nestjs-query-graphql'
+import { QueryService, InjectQueryService } from '@la-patate-du-coin/nestjs-query-core'
+import { CRUDResolver } from '@la-patate-du-coin/nestjs-query-graphql'
 import { Resolver } from '@nestjs/graphql'
 import { TodoItemDTO } from './todo-item.dto'
 import { TodoItemEntity } from './todo-item.entity'
@@ -380,8 +380,8 @@ In this example we disable all `many` mutations. This will prevent `createManyTo
 <TabItem value="module">
 
 ```ts title="todo-item.module.ts"
-import { NestjsQueryGraphQLModule } from '@ptc-org/nestjs-query-graphql'
-import { NestjsQueryTypeOrmModule } from '@ptc-org/nestjs-query-typeorm'
+import { NestjsQueryGraphQLModule } from '@la-patate-du-coin/nestjs-query-graphql'
+import { NestjsQueryTypeOrmModule } from '@la-patate-du-coin/nestjs-query-typeorm'
 import { Module } from '@nestjs/common'
 import { TodoItemDTO } from './todo-item.dto'
 import { TodoItemEntity } from './todo-item.entity'
@@ -409,8 +409,8 @@ export class TodoItemModule {}
 <TabItem value="resolver">
 
 ```ts title="todo-item.resolver.ts"
-import { QueryService, InjectQueryService } from '@ptc-org/nestjs-query-core'
-import { CRUDResolver } from '@ptc-org/nestjs-query-graphql'
+import { QueryService, InjectQueryService } from '@la-patate-du-coin/nestjs-query-core'
+import { CRUDResolver } from '@la-patate-du-coin/nestjs-query-graphql'
 import { Resolver } from '@nestjs/graphql'
 import { TodoItemDTO } from './todo-item.dto'
 import { TodoItemEntity } from './todo-item.entity'
@@ -473,8 +473,8 @@ We can then add it to each of our mutation endpoints
 <TabItem value="module">
 
 ```ts title="todo-item.module.ts"
-import { NestjsQueryGraphQLModule } from '@ptc-org/nestjs-query-graphql'
-import { NestjsQueryTypeOrmModule } from '@ptc-org/nestjs-query-typeorm'
+import { NestjsQueryGraphQLModule } from '@la-patate-du-coin/nestjs-query-graphql'
+import { NestjsQueryTypeOrmModule } from '@la-patate-du-coin/nestjs-query-typeorm'
 import { Module } from '@nestjs/common'
 import { AuthGuard } from '../auth.guard'
 import { TodoItemDTO } from './todo-item.dto'
@@ -505,8 +505,8 @@ export class TodoItemModule {}
 <TabItem value="resolver">
 
 ```ts title="todo-item.resolver.ts"
-import { QueryService, InjectQueryService } from '@ptc-org/nestjs-query-core'
-import { CRUDResolver } from '@ptc-org/nestjs-query-graphql'
+import { QueryService, InjectQueryService } from '@la-patate-du-coin/nestjs-query-core'
+import { CRUDResolver } from '@la-patate-du-coin/nestjs-query-graphql'
 import { Resolver } from '@nestjs/graphql'
 import { AuthGuard } from '../auth.guard'
 import { TodoItemDTO } from './todo-item.dto'
@@ -544,8 +544,8 @@ mutations.
 <TabItem value="module">
 
 ```ts title="todo-item.module.ts"
-import { NestjsQueryGraphQLModule } from '@ptc-org/nestjs-query-graphql'
-import { NestjsQueryTypeOrmModule } from '@ptc-org/nestjs-query-typeorm'
+import { NestjsQueryGraphQLModule } from '@la-patate-du-coin/nestjs-query-graphql'
+import { NestjsQueryTypeOrmModule } from '@la-patate-du-coin/nestjs-query-typeorm'
 import { Module } from '@nestjs/common'
 import { AuthGuard } from '../auth.guard'
 import { TodoItemDTO } from './todo-item.dto'
@@ -576,8 +576,8 @@ export class TodoItemModule {}
 <TabItem value="resolver">
 
 ```ts title="todo-item.resolver.ts"
-import { QueryService, InjectQueryService } from '@ptc-org/nestjs-query-core'
-import { CRUDResolver } from '@ptc-org/nestjs-query-graphql'
+import { QueryService, InjectQueryService } from '@la-patate-du-coin/nestjs-query-core'
+import { CRUDResolver } from '@la-patate-du-coin/nestjs-query-graphql'
 import { Resolver } from '@nestjs/graphql'
 import { AuthGuard } from '../auth.guard'
 import { TodoItemDTO } from './todo-item.dto'
@@ -622,8 +622,8 @@ In this example we'll change the `todoItem` query to `findTodoItem` and the `tod
 <TabItem value="module">
 
 ```ts title="todo-item.module.ts"
-import { NestjsQueryGraphQLModule } from '@ptc-org/nestjs-query-graphql'
-import { NestjsQueryTypeOrmModule } from '@ptc-org/nestjs-query-typeorm'
+import { NestjsQueryGraphQLModule } from '@la-patate-du-coin/nestjs-query-graphql'
+import { NestjsQueryTypeOrmModule } from '@la-patate-du-coin/nestjs-query-typeorm'
 import { Module } from '@nestjs/common'
 import { TodoItemDTO } from './todo-item.dto'
 import { TodoItemEntity } from './todo-item.entity'
@@ -649,8 +649,8 @@ export class TodoItemModule {}
 <TabItem value="resolver">
 
 ```ts title="todo-item.resolver.ts"
-import { QueryService, InjectQueryService } from '@ptc-org/nestjs-query-core'
-import { CRUDResolver } from '@ptc-org/nestjs-query-graphql'
+import { QueryService, InjectQueryService } from '@la-patate-du-coin/nestjs-query-core'
+import { CRUDResolver } from '@la-patate-du-coin/nestjs-query-graphql'
 import { Resolver } from '@nestjs/graphql'
 import { TodoItemDTO } from './todo-item.dto'
 import { TodoItemEntity } from './todo-item.entity'
@@ -670,7 +670,7 @@ export class TodoItemResolver extends CRUDResolver(TodoItemDTO, {
 
 ## Individual Resolvers
 
-The `@ptc-org/nestjs-query-graphql` package exposes each part of `CRUD` into individual mixins and resolvers allowing you
+The `@la-patate-du-coin/nestjs-query-graphql` package exposes each part of `CRUD` into individual mixins and resolvers allowing you
 to pick and choose what functionality you want to expose.
 
 :::note
@@ -688,8 +688,8 @@ The `CreateResolver` will only expose the `createOne` and `createMany` endpoints
 For example the following resolver will expose the `createOneTodoItem` and `createManyTodoItems` mutations.
 
 ```ts title="todo-item.resolver.ts"
-import { QueryService, InjectQueryService } from '@ptc-org/nestjs-query-core'
-import { CreateResolver } from '@ptc-org/nestjs-query-graphql'
+import { QueryService, InjectQueryService } from '@la-patate-du-coin/nestjs-query-core'
+import { CreateResolver } from '@la-patate-du-coin/nestjs-query-graphql'
 import { Resolver } from '@nestjs/graphql'
 import { TodoItemDTO } from './todo-item.dto'
 import { TodoItemEntity } from './todo-item.entity'
@@ -712,8 +712,8 @@ can be passed to the `ReadResolver`
 For example the following resolver will expose the `todoItems` and `todoItem` queries.
 
 ```ts title="todo-item.resolver.ts"
-import { QueryService, InjectQueryService } from '@ptc-org/nestjs-query-core'
-import { ReadResolver } from '@ptc-org/nestjs-query-graphql'
+import { QueryService, InjectQueryService } from '@la-patate-du-coin/nestjs-query-core'
+import { ReadResolver } from '@la-patate-du-coin/nestjs-query-graphql'
 import { Resolver } from '@nestjs/graphql'
 import { TodoItemDTO } from './todo-item.dto'
 import { TodoItemEntity } from './todo-item.entity'
@@ -736,8 +736,8 @@ The `UpdateResolver` will only expose the `updateOne` and `updateMany` endpoints
 For example the following resolver will expose the `updateOneTodoItem` and `updateManyTodoItems` mutations.
 
 ```ts title="todo-item.resolver.ts"
-import { QueryService, InjectQueryService } from '@ptc-org/nestjs-query-core'
-import { UpdateResolver } from '@ptc-org/nestjs-query-graphql'
+import { QueryService, InjectQueryService } from '@la-patate-du-coin/nestjs-query-core'
+import { UpdateResolver } from '@la-patate-du-coin/nestjs-query-graphql'
 import { Resolver } from '@nestjs/graphql'
 import { TodoItemDTO } from './todo-item.dto'
 import { TodoItemEntity } from './todo-item.entity'
@@ -760,8 +760,8 @@ The `DeleteResolver` will only expose the `deleteOne` and `deleteMany` endpoints
 For example the following resolver will expose the `updateOneTodoItem` and `updateManyTodoItems` mutations.
 
 ```ts title="todo-item.resolver.ts"
-import { QueryService, InjectQueryService } from '@ptc-org/nestjs-query-core'
-import { DeleteResolver } from '@ptc-org/nestjs-query-graphql'
+import { QueryService, InjectQueryService } from '@la-patate-du-coin/nestjs-query-core'
+import { DeleteResolver } from '@la-patate-du-coin/nestjs-query-graphql'
 import { Resolver } from '@nestjs/graphql'
 import { TodoItemDTO } from './todo-item.dto'
 import { TodoItemEntity } from './todo-item.entity'
@@ -790,7 +790,7 @@ Lets create a new query endpoint that only returns completed `TodoItems`.
 First create a file named `types.ts`. And add the following.
 
 ```ts title="types.ts"
-import { QueryArgsType } from '@ptc-org/nestjs-query-graphql'
+import { QueryArgsType } from '@la-patate-du-coin/nestjs-query-graphql'
 import { ArgsType } from '@nestjs/graphql'
 import { TodoItemDTO } from './dto/todo-item.dto'
 
@@ -805,8 +805,8 @@ In the code above we export two types. `TodoItemConnection` and `TodoItemQuery`.
 In your resolver you can now create a new `completedTodoItems` method with the following:
 
 ```ts title="todo-item.resolver.ts"
-import { Filter, InjectAssemblerQueryService, QueryService } from '@ptc-org/nestjs-query-core';
-import { ConnectionType } from '@ptc-org/nestjs-query-graphql';
+import { Filter, InjectAssemblerQueryService, QueryService } from '@la-patate-du-coin/nestjs-query-core';
+import { ConnectionType } from '@la-patate-du-coin/nestjs-query-graphql';
 import { Args, Query, Resolver } from '@nestjs/graphql';
 import { TodoItemDTO } from './dto/todo-item.dto';
 import { TodoItemAssembler } from './todo-item.assembler';
@@ -887,8 +887,8 @@ The last step is to add the resolver to the module, by registering our resolver 
 custom resolver.
 
 ```ts title="todo-items.module.ts"
-import { NestjsQueryGraphQLModule } from '@ptc-org/nestjs-query-graphql'
-import { NestjsQueryTypeOrmModule } from '@ptc-org/nestjs-query-typeorm'
+import { NestjsQueryGraphQLModule } from '@la-patate-du-coin/nestjs-query-graphql'
+import { NestjsQueryTypeOrmModule } from '@la-patate-du-coin/nestjs-query-typeorm'
 import { Module } from '@nestjs/common'
 import { TodoItemDTO } from './dto/todo-item.dto'
 import { TodoItemAssembler } from './todo-item.assembler'

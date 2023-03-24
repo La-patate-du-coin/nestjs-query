@@ -106,7 +106,7 @@ npx nest g cl todo-item.dto todo-item --flat
 Now lets fill out the DTO. Add the following to `src/todo-item/todo-item.dto.ts`.
 
 ```ts title="todo-item/todo-item.dto.ts"
-import { FilterableField, IDField } from '@ptc-org/nestjs-query-graphql'
+import { FilterableField, IDField } from '@la-patate-du-coin/nestjs-query-graphql'
 import { ObjectType, GraphQLISODateTime, Field, ID } from '@nestjs/graphql'
 
 @ObjectType('TodoItem')
@@ -128,12 +128,12 @@ export class TodoItemDTO {
 }
 ```
 
-Notice the use of `@FilterableField` this will let `@ptc-org/nestjs-query-graphql` know to allow filtering on the
+Notice the use of `@FilterableField` this will let `@la-patate-du-coin/nestjs-query-graphql` know to allow filtering on the
 corresponding field. If you just use `@Field` then you will not be able to filter on the corresponding field.
 
 ## Create the create DTO class.
 
-From the previously created DTO, `@ptc-org/nestjs-query-graphql` will automatically create a `CreateTodoItem` graphql type:
+From the previously created DTO, `@la-patate-du-coin/nestjs-query-graphql` will automatically create a `CreateTodoItem` graphql type:
 
 ```graphql
 input CreateTodoItem {
@@ -199,8 +199,8 @@ The `NestjsQueryGraphQLModule` will automatically create a Resolver that will ex
 <TabItem value="typeorm">
 
 ```ts {10-22}
-import { NestjsQueryGraphQLModule } from '@ptc-org/nestjs-query-graphql';
-import { NestjsQueryTypeOrmModule } from '@ptc-org/nestjs-query-typeorm';
+import { NestjsQueryGraphQLModule } from '@la-patate-du-coin/nestjs-query-graphql';
+import { NestjsQueryTypeOrmModule } from '@la-patate-du-coin/nestjs-query-typeorm';
 import { Module } from '@nestjs/common';
 import { TodoItemCreateDTO } from './todo-item.create.dto';
 import { TodoItemDTO } from './todo-item.dto';

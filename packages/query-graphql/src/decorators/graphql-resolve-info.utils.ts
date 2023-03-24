@@ -11,7 +11,7 @@ import {
 } from 'graphql'
 
 import type { CursorConnectionType, OffsetConnectionType } from '../types'
-import type { Query } from '@ptc-org/nestjs-query-core'
+import type { Query } from '@la-patate-du-coin/nestjs-query-core'
 import type { GraphQLCompositeType, GraphQLResolveInfo as ResolveInfo, SelectionNode } from 'graphql'
 
 type QueryResolveFields<DTO> = {
@@ -140,10 +140,12 @@ export function simplifyResolveInfo<DTO>(resolveInfo: ResolveInfo): QueryResolve
     | QueryResolveTree<CursorConnectionType<DTO>>
 
   if (isOffsetPaging(simpleInfo)) {
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
     return simpleInfo.fields.nodes as QueryResolveTree<DTO>
   } else if (isCursorPaging(simpleInfo)) {
     return simpleInfo.fields.edges.fields.node as QueryResolveTree<DTO>
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
   return simpleInfo as QueryResolveTree<DTO>
 }

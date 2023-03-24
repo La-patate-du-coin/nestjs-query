@@ -3,24 +3,24 @@ title: Install
 sidebar_label: Install
 ---
 
-## @ptc-org/nestjs-query-core
+## @la-patate-du-coin/nestjs-query-core
 
 ```sh
-npm i @ptc-org/nestjs-query-core @nestjs/common class-transformer
+npm i @la-patate-du-coin/nestjs-query-core @nestjs/common class-transformer
 ```
 
-## @ptc-org/nestjs-query-graphql
+## @la-patate-du-coin/nestjs-query-graphql
 
 ```sh
-npm i @ptc-org/nestjs-query-graphql @nestjs/common @nestjs/graphql graphql graphql-subscriptions class-transformer class-validator dataloader
+npm i @la-patate-du-coin/nestjs-query-graphql @nestjs/common @nestjs/graphql graphql graphql-subscriptions class-transformer class-validator dataloader
 ```
 
-**NOTE** `@ptc-org/nestjs-query-graphql` has opted for peer dependencies to follow nest conventions and to prevent duplicate installations of packages.
+**NOTE** `@la-patate-du-coin/nestjs-query-graphql` has opted for peer dependencies to follow nest conventions and to prevent duplicate installations of packages.
 
-## @ptc-org/nestjs-query-typeorm
+## @la-patate-du-coin/nestjs-query-typeorm
 
 ```sh
-npm i @ptc-org/nestjs-query-typeorm @nestjs/common @nestjs/typeorm class-transformer typeorm
+npm i @la-patate-du-coin/nestjs-query-typeorm @nestjs/common @nestjs/typeorm class-transformer typeorm
 ```
 
-**NOTE** `@ptc-org/nestjs-query-typeorm` has opted for peer dependencies to follow nest conventions and to prevent duplicate installations of packages.
+**NOTE** `@la-patate-du-coin/nestjs-query-typeorm` has opted for peer dependencies to follow nest conventions and to prevent duplicate installations of packages.

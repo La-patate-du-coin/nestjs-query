@@ -1,5 +1,5 @@
+import { Class } from '@la-patate-du-coin/nestjs-query-core'
 import { Field, InputType, Int } from '@nestjs/graphql'
-import { Class } from '@ptc-org/nestjs-query-core'
 import { IsInt } from 'class-validator'
 
 import { IsUndefined } from '../../validators'

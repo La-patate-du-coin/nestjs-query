@@ -1,5 +1,5 @@
+import { Class } from '@la-patate-du-coin/nestjs-query-core'
 import { Inject } from '@nestjs/common'
-import { Class } from '@ptc-org/nestjs-query-core'
 
 import { getAuthorizerToken } from '../auth'
 

@@ -1,5 +1,5 @@
+import { NestjsQueryGraphQLModule } from '@la-patate-du-coin/nestjs-query-graphql'
 import { ObjectType } from '@nestjs/graphql'
-import { NestjsQueryGraphQLModule } from '@ptc-org/nestjs-query-graphql'
 
 import { FilterableField } from '../src/decorators/filterable-field.decorator'
 

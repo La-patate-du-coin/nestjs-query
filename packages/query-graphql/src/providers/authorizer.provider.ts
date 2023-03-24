@@ -1,5 +1,5 @@
+import { Class } from '@la-patate-du-coin/nestjs-query-core'
 import { Provider } from '@nestjs/common'
-import { Class } from '@ptc-org/nestjs-query-core'
 
 import { createDefaultAuthorizer, getAuthorizerToken, getCustomAuthorizerToken } from '../auth'
 import { getAuthorizer, getCustomAuthorizer } from '../decorators'

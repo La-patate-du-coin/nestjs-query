@@ -1,4 +1,6 @@
 // eslint-disable-next-line max-classes-per-file
+import { SortDirection } from '@la-patate-du-coin/nestjs-query-core'
+import { FilterableField, PagingStrategies, QueryArgsType, QueryOptions } from '@la-patate-du-coin/nestjs-query-graphql'
 import {
   Args,
   ArgsType,
@@ -11,8 +13,6 @@ import {
   Query,
   Resolver
 } from '@nestjs/graphql'
-import { SortDirection } from '@ptc-org/nestjs-query-core'
-import { FilterableField, PagingStrategies, QueryArgsType, QueryOptions } from '@ptc-org/nestjs-query-graphql'
 import { plainToClass } from 'class-transformer'
 import { validateSync } from 'class-validator'
 

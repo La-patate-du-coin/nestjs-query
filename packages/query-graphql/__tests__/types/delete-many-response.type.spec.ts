@@ -1,5 +1,5 @@
+import { DeleteManyResponse } from '@la-patate-du-coin/nestjs-query-core'
 import { Query, Resolver } from '@nestjs/graphql'
-import { DeleteManyResponse } from '@ptc-org/nestjs-query-core'
 
 import { DeleteManyResponseType } from '../../src/types'
 import { generateSchema } from '../__fixtures__'

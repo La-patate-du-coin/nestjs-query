@@ -1,8 +1,8 @@
 // eslint-disable-next-line max-classes-per-file
+import { Filter } from '@la-patate-du-coin/nestjs-query-core'
+import { Authorize, Authorizer, Relation, UnPagedRelation } from '@la-patate-du-coin/nestjs-query-graphql'
 import { Injectable } from '@nestjs/common'
 import { Test, TestingModule } from '@nestjs/testing'
-import { Filter } from '@ptc-org/nestjs-query-core'
-import { Authorize, Authorizer, Relation, UnPagedRelation } from '@ptc-org/nestjs-query-graphql'
 
 import {
   AuthorizationContext,

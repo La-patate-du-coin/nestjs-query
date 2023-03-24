@@ -26,6 +26,6 @@ Check out the [installation docs](./install.md)
 
 NestJS-Query is composed of multiple packages
 
-- [`@ptc-org/nestjs-query-core`](https://github.com/La-patate-du-coin/nestjs-query/tree/master/packages/core) - Defines all interfaces and utility types implemented by the other packages.
-- [`@ptc-org/nestjs-query-graphql`](https://github.com/La-patate-du-coin/nestjs-query/tree/master/packages/query-graphql) - Package that provides the graphql resolver and decorators for crud endpoints.
-- [`@ptc-org/nestjs-query-typeorm`](https://github.com/La-patate-du-coin/nestjs-query/tree/master/packages/query-typeorm) - Package that implements a Typeorm service that can be used by itself or with the graphql resolver provided by `@ptc-org/nestjs-query-graphql`.
+- [`@la-patate-du-coin/nestjs-query-core`](https://github.com/La-patate-du-coin/nestjs-query/tree/master/packages/core) - Defines all interfaces and utility types implemented by the other packages.
+- [`@la-patate-du-coin/nestjs-query-graphql`](https://github.com/La-patate-du-coin/nestjs-query/tree/master/packages/query-graphql) - Package that provides the graphql resolver and decorators for crud endpoints.
+- [`@la-patate-du-coin/nestjs-query-typeorm`](https://github.com/La-patate-du-coin/nestjs-query/tree/master/packages/query-typeorm) - Package that implements a Typeorm service that can be used by itself or with the graphql resolver provided by `@la-patate-du-coin/nestjs-query-graphql`.

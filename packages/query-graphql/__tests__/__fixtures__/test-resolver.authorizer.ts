@@ -1,6 +1,6 @@
+import { Filter } from '@la-patate-du-coin/nestjs-query-core'
+import { Authorizer } from '@la-patate-du-coin/nestjs-query-graphql'
 import { Injectable } from '@nestjs/common'
-import { Filter } from '@ptc-org/nestjs-query-core'
-import { Authorizer } from '@ptc-org/nestjs-query-graphql'
 
 import { TestResolverDTO } from './test-resolver.dto'
 

@@ -1,6 +1,6 @@
+import { NestjsQueryGraphQLModule } from '@la-patate-du-coin/nestjs-query-graphql'
+import { NestjsQueryTypeOrmModule } from '@la-patate-du-coin/nestjs-query-typeorm'
 import { Module } from '@nestjs/common'
-import { NestjsQueryGraphQLModule } from '@ptc-org/nestjs-query-graphql'
-import { NestjsQueryTypeOrmModule } from '@ptc-org/nestjs-query-typeorm'
 
 import { SubTaskDTO } from './dto/sub-task.dto'
 import { CreateSubTaskDTO } from './dto/subtask-input.dto'

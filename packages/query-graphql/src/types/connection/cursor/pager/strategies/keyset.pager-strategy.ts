@@ -1,5 +1,5 @@
+import { Class, Filter, invertSort, mergeFilter, Query, SortDirection, SortField } from '@la-patate-du-coin/nestjs-query-core'
 import { BadRequestException } from '@nestjs/common'
-import { Class, Filter, invertSort, mergeFilter, Query, SortDirection, SortField } from '@ptc-org/nestjs-query-core'
 import { plainToClass } from 'class-transformer'
 
 import { CursorPagingType } from '../../../../query'

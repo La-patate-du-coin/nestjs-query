@@ -1,5 +1,5 @@
+import { Class } from '@la-patate-du-coin/nestjs-query-core'
 import { ArgsType, Field } from '@nestjs/graphql'
-import { Class } from '@ptc-org/nestjs-query-core'
 import { IsNotEmpty } from 'class-validator'
 
 import { getDTOIdTypeOrDefault } from '../common'

@@ -1,7 +1,7 @@
+import { InjectQueryService, mergeFilter, QueryService, UpdateManyResponse } from '@la-patate-du-coin/nestjs-query-core'
+import { HookInterceptor, HookTypes, MutationHookArgs, UpdateManyResponseType } from '@la-patate-du-coin/nestjs-query-graphql'
 import { UseGuards, UseInterceptors } from '@nestjs/common'
 import { Mutation, Resolver } from '@nestjs/graphql'
-import { InjectQueryService, mergeFilter, QueryService, UpdateManyResponse } from '@ptc-org/nestjs-query-core'
-import { HookInterceptor, HookTypes, MutationHookArgs, UpdateManyResponseType } from '@ptc-org/nestjs-query-graphql'
 
 import { AuthGuard } from '../auth/auth.guard'
 import { TodoItemDTO } from './dto/todo-item.dto'

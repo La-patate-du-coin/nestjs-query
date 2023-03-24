@@ -1,5 +1,5 @@
+import { Class } from '@la-patate-du-coin/nestjs-query-core'
 import { Field, ObjectType } from '@nestjs/graphql'
-import { Class } from '@ptc-org/nestjs-query-core'
 
 import { ConnectionCursorScalar, ConnectionCursorType } from '../../cursor.scalar'
 import { PageInfoType } from '../interfaces'

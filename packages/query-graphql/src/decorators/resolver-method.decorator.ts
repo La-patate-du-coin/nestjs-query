@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { Class } from '@la-patate-du-coin/nestjs-query-core'
 import {
   applyDecorators,
   CanActivate,
@@ -10,7 +11,6 @@ import {
   UseInterceptors,
   UsePipes
 } from '@nestjs/common'
-import { Class } from '@ptc-org/nestjs-query-core'
 
 export interface BaseResolverOptions {
   /** An array of `nestjs` guards to apply to a graphql endpoint */

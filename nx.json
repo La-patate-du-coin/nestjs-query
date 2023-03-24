@@ -1,6 +1,6 @@
 {
   "extends": "nx/presets/npm.json",
-  "npmScope": "ptc-org",
+  "npmScope": "la-patate-du-coin",
   "workspaceLayout": {
     "libsDir": "packages",
     "appsDir": ""

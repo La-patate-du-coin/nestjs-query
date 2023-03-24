@@ -1,4 +1,4 @@
-import { Class, Query, QueryService } from '@ptc-org/nestjs-query-core'
+import { Class, Query, QueryService } from '@la-patate-du-coin/nestjs-query-core'
 
 import { NestjsQueryDataloader } from './relations.loader'
 

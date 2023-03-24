@@ -1,6 +1,6 @@
+import { Class, getQueryServiceToken } from '@la-patate-du-coin/nestjs-query-core'
 import { FactoryProvider } from '@nestjs/common'
 import { getRepositoryToken } from '@nestjs/typeorm'
-import { Class, getQueryServiceToken } from '@ptc-org/nestjs-query-core'
 
 import type { DataSource, Repository } from 'typeorm'
 

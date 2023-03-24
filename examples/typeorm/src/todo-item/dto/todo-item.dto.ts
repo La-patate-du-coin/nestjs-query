@@ -1,5 +1,5 @@
+import { FilterableCursorConnection, FilterableField, KeySet, QueryOptions } from '@la-patate-du-coin/nestjs-query-graphql'
 import { Field, GraphQLISODateTime, ID, ObjectType } from '@nestjs/graphql'
-import { FilterableCursorConnection, FilterableField, KeySet, QueryOptions } from '@ptc-org/nestjs-query-graphql'
 
 import { AuthGuard } from '../../auth.guard'
 import { SubTaskDTO } from '../../sub-task/dto/sub-task.dto'

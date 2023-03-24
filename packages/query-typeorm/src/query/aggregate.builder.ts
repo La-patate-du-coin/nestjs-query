@@ -1,11 +1,11 @@
-import { BadRequestException } from '@nestjs/common'
 import {
   AggregateQuery,
   AggregateQueryField,
   AggregateQueryGroupByField,
   AggregateResponse,
   GroupBy
-} from '@ptc-org/nestjs-query-core'
+} from '@la-patate-du-coin/nestjs-query-core'
+import { BadRequestException } from '@nestjs/common'
 import { camelCase } from 'camel-case'
 import { Repository, SelectQueryBuilder } from 'typeorm'
 

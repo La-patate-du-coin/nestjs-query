@@ -1,5 +1,5 @@
+import { Authorize, FilterableField, FilterableRelation, QueryOptions, Relation } from '@la-patate-du-coin/nestjs-query-graphql'
 import { GraphQLISODateTime, ID, ObjectType } from '@nestjs/graphql'
-import { Authorize, FilterableField, FilterableRelation, QueryOptions, Relation } from '@ptc-org/nestjs-query-graphql'
 
 import { TodoItemDTO } from '../../todo-item/dto/todo-item.dto'
 import { UserDTO } from '../../user/user.dto'

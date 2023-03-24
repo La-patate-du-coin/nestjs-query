@@ -1,6 +1,6 @@
+import { Class, Filter } from '@la-patate-du-coin/nestjs-query-core'
 import { Inject, Injectable, Optional } from '@nestjs/common'
 import { ModuleRef } from '@nestjs/core'
-import { Class, Filter } from '@ptc-org/nestjs-query-core'
 
 import { getAuthorizer, getRelations } from '../decorators'
 import { ResolverRelation } from '../resolvers/relations'

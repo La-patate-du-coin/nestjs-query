@@ -1,6 +1,6 @@
+import { Class } from '@la-patate-du-coin/nestjs-query-core'
 import { DynamicModule } from '@nestjs/common'
 import { TypeOrmModule } from '@nestjs/typeorm'
-import { Class } from '@ptc-org/nestjs-query-core'
 
 import type { DataSource } from 'typeorm'
 

@@ -1,4 +1,4 @@
-import { Query } from '@ptc-org/nestjs-query-core'
+import { Query } from '@la-patate-du-coin/nestjs-query-core'
 
 import { CursorQueryArgsType } from '../../../query'
 import { Count, EdgeType, Pager, QueryMany } from '../../interfaces'

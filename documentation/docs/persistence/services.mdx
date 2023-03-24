@@ -11,7 +11,7 @@ The following ORMs are supported out of the box.
 
 - [TypeOrm](./typeorm/getting-started.md)
 
-`@ptc-org/nestjs-query-core` also provides a number of base `QueryService`s that can be used to create custom query services.
+`@la-patate-du-coin/nestjs-query-core` also provides a number of base `QueryService`s that can be used to create custom query services.
 [See the Services docs](../concepts/services.md#service-helpers)
 
 All examples assume the following entity.
@@ -69,7 +69,7 @@ In order to use the decorator you will need to use the module that comes with th
 <TabItem value="typeorm">
 
 ```ts title="todo-item.module.ts" {8}
-import { NestjsQueryTypeOrmModule } from '@ptc-org/nestjs-query-typeorm'
+import { NestjsQueryTypeOrmModule } from '@la-patate-du-coin/nestjs-query-typeorm'
 import { Module } from '@nestjs/common'
 import { TodoItemEntity } from './todo-item.entity'
 import { TodoItemResolver } from './todo-item.resolver'
@@ -89,8 +89,8 @@ export class TodoItemModule {}
 Once you have imported the correct module, use `@InjectQueryService` decorator to inject a `QueryService` into your class or resolver.
 
 ```ts title="todo-item.resolver.ts" {10}
-import { QueryService, InjectQueryService } from '@ptc-org/nestjs-query-core'
-import { CRUDResolver } from '@ptc-org/nestjs-query-graphql'
+import { QueryService, InjectQueryService } from '@la-patate-du-coin/nestjs-query-core'
+import { CRUDResolver } from '@la-patate-du-coin/nestjs-query-graphql'
 import { Resolver } from '@nestjs/graphql'
 import { TodoItemDTO } from './todo-item.dto'
 import { TodoItemEntity } from './todo-item.entity'
@@ -415,7 +415,7 @@ export class SubTaskEntity {
 Then we could add the `todoItemId` to the SubTaskDTO.
 
 ```ts title="sub-task.dto.ts" {24-26}
-import { FilterableField, IDField } from '@ptc-org/nestjs-query-graphql'
+import { FilterableField, IDField } from '@la-patate-du-coin/nestjs-query-graphql'
 import { ObjectType, ID, GraphQLISODateTime } from '@nestjs/graphql'
 
 @ObjectType('SubTask')
@@ -470,7 +470,7 @@ Assume you have the following subtask definition.
 ```ts title="sub-task.ts"  {15,38-44}
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, ManyToOne, JoinColumn } from 'typeorm'
 import { ObjectType, ID } from '@nestjs/graphql'
-import { FilterableField, IDField, Relation } from '@ptc-org/nestjs-query-graphql'
+import { FilterableField, IDField, Relation } from '@la-patate-du-coin/nestjs-query-graphql'
 import { TodoItem } from '../todo-item/todo-item'
 
 @ObjectType()

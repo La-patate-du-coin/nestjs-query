@@ -1,6 +1,6 @@
+import { QueryService } from '@la-patate-du-coin/nestjs-query-core'
+import { TypeOrmQueryService } from '@la-patate-du-coin/nestjs-query-typeorm'
 import { InjectRepository } from '@nestjs/typeorm'
-import { QueryService } from '@ptc-org/nestjs-query-core'
-import { TypeOrmQueryService } from '@ptc-org/nestjs-query-typeorm'
 import { Repository } from 'typeorm'
 
 import { TodoItemEntity } from './todo-item.entity'

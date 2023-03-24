@@ -1,5 +1,5 @@
+import { Class } from '@la-patate-du-coin/nestjs-query-core'
 import { Field, InputType } from '@nestjs/graphql'
-import { Class } from '@ptc-org/nestjs-query-core'
 import { Type } from 'class-transformer'
 import { ArrayNotEmpty, ValidateNested } from 'class-validator'
 

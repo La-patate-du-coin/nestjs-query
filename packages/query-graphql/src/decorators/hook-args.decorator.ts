@@ -1,6 +1,6 @@
+import { Class } from '@la-patate-du-coin/nestjs-query-core'
 import { createParamDecorator, ExecutionContext } from '@nestjs/common'
 import { Args, GqlExecutionContext } from '@nestjs/graphql'
-import { Class } from '@ptc-org/nestjs-query-core'
 import { plainToClass } from 'class-transformer'
 
 import { Hook } from '../hooks'

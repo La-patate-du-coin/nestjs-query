@@ -1,5 +1,5 @@
+import { CursorConnection, FilterableField, IDField } from '@la-patate-du-coin/nestjs-query-graphql'
 import { GraphQLISODateTime, ObjectType } from '@nestjs/graphql'
-import { CursorConnection, FilterableField, IDField } from '@ptc-org/nestjs-query-graphql'
 
 import { CustomIDScalar } from '../../common/custom-id.scalar'
 import { SubTaskDTO } from '../../sub-task/dto/sub-task.dto'

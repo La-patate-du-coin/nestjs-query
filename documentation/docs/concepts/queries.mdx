@@ -5,7 +5,7 @@ title: Queries
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
 
-The core of `nestjs-query` is the `Query`, it is used by `@ptc-org/nestjs-query-graphql` and `@ptc-org/nestjs-query-typeorm`.
+The core of `nestjs-query` is the `Query`, it is used by `@la-patate-du-coin/nestjs-query-graphql` and `@la-patate-du-coin/nestjs-query-typeorm`.
 
 The query interface contains three optional fields.
 
@@ -38,7 +38,7 @@ Lets create a simple filter that would allow us to filter for titles equal to `'
 ### Simple
 
 ```ts
-import { Query } from '@ptc-org/nestjs-query-core'
+import { Query } from '@la-patate-du-coin/nestjs-query-core'
 
 const q: Query<MyClass> = {
   filter: {
@@ -52,7 +52,7 @@ const q: Query<MyClass> = {
 You can also filter on multiple fields.
 
 ```ts
-import { Query } from '@ptc-org/nestjs-query-core'
+import { Query } from '@la-patate-du-coin/nestjs-query-core'
 
 const q: Query<MyClass> = {
   filter: {
@@ -69,7 +69,7 @@ const q: Query<MyClass> = {
 If you include multiple comparisons for a single field they will be ORed together.
 
 ```ts
-import { Query } from '@ptc-org/nestjs-query-core'
+import { Query } from '@la-patate-du-coin/nestjs-query-core'
 
 const q: Query<MyClass> = {
   filter: {
@@ -201,7 +201,7 @@ The `sorting` field is an array of object containing:
 <TabItem value="single">
 
 ```ts
-// import { SortDirection } from '@ptc-org/nestjs-query-core';
+// import { SortDirection } from '@la-patate-du-coin/nestjs-query-core';
 
 const q: Query<MyClass> = {
   sorting: [{ field: 'title', direction: SortDirection.DESC }]
@@ -212,7 +212,7 @@ const q: Query<MyClass> = {
 <TabItem value="multi">
 
 ```ts
-// import { SortDirection } from '@ptc-org/nestjs-query-core';
+// import { SortDirection } from '@la-patate-du-coin/nestjs-query-core';
 
 const q: Query<MyClass> = {
   sorting: [

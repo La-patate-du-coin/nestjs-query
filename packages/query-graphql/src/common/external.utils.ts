@@ -1,8 +1,8 @@
+import { Class } from '@la-patate-du-coin/nestjs-query-core'
 import { TypeMetadataStorage } from '@nestjs/graphql'
 import { EnumMetadata } from '@nestjs/graphql/dist/schema-builder/metadata'
 import { ObjectTypeMetadata } from '@nestjs/graphql/dist/schema-builder/metadata/object-type.metadata'
 import { LazyMetadataStorage } from '@nestjs/graphql/dist/schema-builder/storages/lazy-metadata.storage'
-import { Class } from '@ptc-org/nestjs-query-core'
 
 import { UnregisteredObjectType } from '../types/type.errors'
 

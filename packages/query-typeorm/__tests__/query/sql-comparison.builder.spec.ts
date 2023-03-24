@@ -1,4 +1,4 @@
-import { CommonFieldComparisonBetweenType } from '@ptc-org/nestjs-query-core'
+import { CommonFieldComparisonBetweenType } from '@la-patate-du-coin/nestjs-query-core'
 
 import { randomString } from '../../src/common'
 import { SQLComparisonBuilder } from '../../src/query'

@@ -1,5 +1,5 @@
+import { CursorConnection, FilterableField } from '@la-patate-du-coin/nestjs-query-graphql'
 import { GraphQLISODateTime, ID, ObjectType } from '@nestjs/graphql'
-import { CursorConnection, FilterableField } from '@ptc-org/nestjs-query-graphql'
 
 import { TodoItemDTO } from '../../todo-item/dto/todo-item.dto'
 

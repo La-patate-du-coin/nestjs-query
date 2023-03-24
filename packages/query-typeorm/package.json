@@ -1,7 +1,7 @@
 {
-  "name": "@ptc-org/nestjs-query-typeorm",
+  "name": "@la-patate-du-coin/nestjs-query-typeorm",
   "version": "2.3.0",
-  "description": "Typeorm adapter for @ptc-org/nestjs-query-core",
+  "description": "Typeorm adapter for @la-patate-du-coin/nestjs-query-core",
   "author": "doug-martin <doug@dougamartin.com>",
   "homepage": "https://github.com/La-patate-du-coin/nestjs-query#readme",
   "license": "MIT",

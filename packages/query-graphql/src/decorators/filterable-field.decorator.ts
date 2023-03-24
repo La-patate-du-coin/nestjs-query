@@ -1,5 +1,5 @@
+import { ArrayReflector, Class, FilterComparisonOperators, getPrototypeChain } from '@la-patate-du-coin/nestjs-query-core'
 import { Field, FieldOptions, ReturnTypeFunc } from '@nestjs/graphql'
-import { ArrayReflector, Class, FilterComparisonOperators, getPrototypeChain } from '@ptc-org/nestjs-query-core'
 
 import { FILTERABLE_FIELD_KEY } from './constants'
 
@@ -25,7 +25,7 @@ export interface FilterableFieldDescriptor {
  * In the following DTO `id`, `title` and `completed` are filterable.
  *
  * ```ts
- * import { FilterableField } from '@ptc-org/nestjs-query-graphql';
+ * import { FilterableField } from '@la-patate-du-coin/nestjs-query-graphql';
  * import { ObjectType, ID, GraphQLISODateTime, Field } from '@nestjs/graphql';
  *
  * @ObjectType('TodoItem')
