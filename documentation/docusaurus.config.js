@@ -27,12 +27,6 @@ module.exports = {
         }
       ]
     },
-    algolia: {
-      appId: 'S3RV239NEL',
-      apiKey: '80e3968790612a06bf29d4925bfff655',
-      indexName: 'tripss-nestjs-query',
-      algoliaOptions: {} // Optional, if provided by Algolia
-    },
     footer: {
       links: [
         {
