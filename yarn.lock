@@ -5243,12 +5243,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@ptc-org/nestjs-query-graphql@workspace:packages/query-graphql"
   dependencies:
-    dataloader: ^2.1.0
+    dataloader: ^2.2.2
     graphql-fields: ^2.0.3
     lodash.omit: ^4.5.0
     lower-case-first: ^2.0.2
     pluralize: ^8.0.0
-    tslib: ^2.4.0
+    tslib: ^2.5.0
     upper-case-first: ^2.0.2
   peerDependencies:
     "@apollo/gateway": ^0.44.1 || ^0.46.0 || ^0.48.0 || ^0.49.0 || ^0.50.0 || ^2.0.0
@@ -5259,7 +5259,7 @@ __metadata:
     class-validator: ^0.14.0
     graphql: ^16.0.0
     graphql-subscriptions: ^2.0.0
-    ts-morph: ^13.0.2 || ^14.0.0 || ^15.0.0
+    ts-morph: ^13.0.2 || ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
   languageName: unknown
   linkType: soft
 
@@ -9547,17 +9547,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dataloader@npm:2.2.2":
+"dataloader@npm:2.2.2, dataloader@npm:^2.2.2":
   version: 2.2.2
   resolution: "dataloader@npm:2.2.2"
   checksum: 4dabd247089c29f194e94d5434d504f99156c5c214a03463c20f3f17f40398d7e179edee69a27c16e315519ac8739042a810090087ae26449a0e685156a02c65
-  languageName: node
-  linkType: hard
-
-"dataloader@npm:^2.1.0":
-  version: 2.1.0
-  resolution: "dataloader@npm:2.1.0"
-  checksum: bbd43496c41697766f8611f60ed3bae437b450985499140b9603a2447c10d45975d3a0661caaebaa9750bc1bc9fd154676a314423294916c8b8ca1a59a08d139
   languageName: node
   linkType: hard
 
