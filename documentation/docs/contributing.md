@@ -216,7 +216,6 @@ If you find yourself in a situation where you are adding a new feature or docume
 - `graphql` - All documentation that is graphql specific.
 - `persistence` - Documentation related to the different persistence libary adapters.
 - `utilities` - Miscellaneous utilties that are useful when building an application.
-- `migration-guides` - Documentation on how to upgrade between versions when breaking changes are introduced.
 - `faq.md` - Common questions with links to the relevant documentation.
 
 If you are unsure where to add documentation, feel free to issue a draft PR and include a question on where to add the relevant documentation!
