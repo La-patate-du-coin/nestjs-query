@@ -1,0 +1,29 @@
+name: 'Setup environment'
+description: 'Setup environment'
+
+inputs:
+  node_version:
+    description: 'Node.js version'
+    required: true
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Setup Node.js ${{ inputs.node_version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ inputs.node_version }}
+        cache: 'yarn'
+
+    - name: Install Yarn
+      shell: bash
+      run: npm install -g yarn
+
+    - name: Install dependencies
+      shell: bash
+      run: yarn install --immutable
+
+    - name: Derive appropriate SHAs for base and head for `nx affected` commands
+      uses: nrwl/nx-set-shas@v3
+      with:
+        main-branch-name: master
