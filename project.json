@@ -13,7 +13,7 @@
       },
       "configurations": {
         "release": {
-          "postTargets": ["workspace:github", "workspace:npm"]
+          "postTargets": ["workspace:github", "core:npm", "query-graphql:npm", "query-typeorm:npm"]
         }
       }
     },
@@ -22,12 +22,6 @@
       "options": {
         "tag": "${tag}",
         "notes": "${notes}"
-      }
-    },
-    "npm": {
-      "executor": "ngx-deploy-npm:deploy",
-      "options": {
-        "noBuild": true
       }
     }
   }

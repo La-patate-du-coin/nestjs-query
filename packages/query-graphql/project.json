@@ -35,6 +35,12 @@
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {}
+    },
+    "npm": {
+      "executor": "ngx-deploy-npm:deploy",
+      "options": {
+        "noBuild": true
+      }
     }
   },
   "tags": [],
