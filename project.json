@@ -9,7 +9,7 @@
         "skipProjectChangelog": true,
         "baseBranch": "master",
         "changelogHeader": " ",
-        "commitMessageFormat": "chore(release): v${version}",
+        "commitMessageFormat": "chore(release): v${version} [skip ci]",
         "push": true
       },
       "configurations": {
