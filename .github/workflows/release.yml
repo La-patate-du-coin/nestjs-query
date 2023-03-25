@@ -23,7 +23,7 @@ jobs:
         run: yarn nx run-many --target=build --projects=query-*
 
       - name: Release
-        run: yarn nx version:release
+        run: yarn nx version --configuration=release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
