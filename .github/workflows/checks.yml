@@ -117,4 +117,4 @@ jobs:
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           directory: ./coverage
-          name: run-e2e-${{ matrix.node_version }}
+          name: run-e2e-${{ matrix.db_type }}-${{ matrix.node_version }}
