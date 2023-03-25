@@ -1,4 +1,4 @@
-name: Release docs
+name: Release documentation
 
 on:
   push:
@@ -8,33 +8,25 @@ on:
 permissions:
   contents: write
 
-env:
-  NX_BRANCH: ${{ github.event.number }}
-  NX_RUN_GROUP: ${{ github.run_id }}
-
 jobs:
-
-  setup:
-    uses: ./.github/workflows/shared.setup-env.yml
-
-  docs:
+  release:
     concurrency: ci-${{ github.ref }}
     runs-on: ubuntu-latest
     needs: setup
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup
-        uses: ./.github/actions/setup-step
+      - uses: actions/checkout@v3
         with:
-          set_shas: false
+          fetch-depth: 0
+
+      - name: Setup environment
+        uses: ./.github/actions/setup-env
+        with:
+          node_version: 16
 
       - name: Build docs
         run: npx nx build documentation
 
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4.3.3
+      - name: Deploy docs
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages # The branch the action should deploy to.
-          folder: ./dist/documentation # The folder the action should deploy.
+          folder: build
