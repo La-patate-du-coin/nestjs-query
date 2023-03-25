@@ -1,5 +1,3 @@
-import { UnauthorizedException } from '@nestjs/common'
-import { Field, GraphQLISODateTime, ID, ObjectType } from '@nestjs/graphql'
 import {
   AuthorizationContext,
   Authorize,
@@ -7,7 +5,9 @@ import {
   FilterableField,
   QueryOptions,
   Relation
-} from '@ptc-org/nestjs-query-graphql'
+} from '@la-patate-du-coin/nestjs-query-graphql'
+import { UnauthorizedException } from '@nestjs/common'
+import { Field, GraphQLISODateTime, ID, ObjectType } from '@nestjs/graphql'
 
 import { UserContext } from '../../auth/auth.interfaces'
 import { SubTaskDTO } from '../../sub-task/dto/sub-task.dto'

@@ -1,5 +1,4 @@
 /* eslint-disable no-param-reassign */
-import { GraphQLISODateTime, ID, ObjectType } from '@nestjs/graphql'
 import {
   BeforeCreateMany,
   BeforeCreateOne,
@@ -8,7 +7,8 @@ import {
   FilterableCursorConnection,
   FilterableField,
   KeySet
-} from '@ptc-org/nestjs-query-graphql'
+} from '@la-patate-du-coin/nestjs-query-graphql'
+import { GraphQLISODateTime, ID, ObjectType } from '@nestjs/graphql'
 
 import { CreatedByHook, UpdatedByHook } from '../../hooks'
 import { TodoItemDTO } from '../../todo-item/dto/todo-item.dto'

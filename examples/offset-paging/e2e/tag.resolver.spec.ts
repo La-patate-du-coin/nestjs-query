@@ -1,6 +1,6 @@
+import { OffsetConnectionType } from '@la-patate-du-coin/nestjs-query-graphql'
 import { INestApplication, ValidationPipe } from '@nestjs/common'
 import { Test } from '@nestjs/testing'
-import { OffsetConnectionType } from '@ptc-org/nestjs-query-graphql'
 import request from 'supertest'
 import { Connection } from 'typeorm'
 

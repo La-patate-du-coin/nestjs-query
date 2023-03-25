@@ -1,4 +1,4 @@
-import { Paging, Query } from '@ptc-org/nestjs-query-core'
+import { Paging, Query } from '@la-patate-du-coin/nestjs-query-core'
 
 import { OffsetConnectionType, PagerResult } from '../../interfaces'
 

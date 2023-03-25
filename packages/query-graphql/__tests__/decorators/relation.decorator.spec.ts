@@ -1,5 +1,4 @@
 // eslint-disable-next-line max-classes-per-file
-import { ObjectType } from '@nestjs/graphql'
 import {
   FilterableRelation,
   FilterableUnPagedRelation,
@@ -7,7 +6,8 @@ import {
   PagingStrategies,
   Relation,
   UnPagedRelation
-} from '@ptc-org/nestjs-query-graphql'
+} from '@la-patate-du-coin/nestjs-query-graphql'
+import { ObjectType } from '@nestjs/graphql'
 
 import { CursorConnection, FilterableCursorConnection, FilterableOffsetConnection, getRelations } from '../../src/decorators'
 

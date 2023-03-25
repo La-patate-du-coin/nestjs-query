@@ -1,5 +1,5 @@
+import { AggregateResponse, Class, MapReflector, NumberAggregate, TypeAggregate } from '@la-patate-du-coin/nestjs-query-core'
 import { Field, Float, Int, ObjectType } from '@nestjs/graphql'
-import { AggregateResponse, Class, MapReflector, NumberAggregate, TypeAggregate } from '@ptc-org/nestjs-query-core'
 import { GraphQLScalarType } from 'graphql'
 
 import { getGraphqlObjectName } from '../../common'

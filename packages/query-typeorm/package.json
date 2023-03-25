@@ -1,9 +1,9 @@
 {
-  "name": "@ptc-org/nestjs-query-typeorm",
+  "name": "@la-patate-du-coin/nestjs-query-typeorm",
   "version": "2.3.0",
-  "description": "Typeorm adapter for @ptc-org/nestjs-query-core",
+  "description": "Typeorm adapter for @la-patate-du-coin/nestjs-query-core",
   "author": "doug-martin <doug@dougamartin.com>",
-  "homepage": "https://github.com/tripss/nestjs-query#readme",
+  "homepage": "https://github.com/La-patate-du-coin/nestjs-query#readme",
   "license": "MIT",
   "main": "src/index.js",
   "types": "src/index.d.ts",
@@ -22,7 +22,7 @@
     "lodash.filter": "^4.6.0",
     "lodash.merge": "^4.6.2",
     "lodash.omit": "^4.5.0",
-    "tslib": "^2.4.0",
+    "tslib": "^2.5.0",
     "uuid": "^9.0.0"
   },
   "peerDependencies": {
@@ -33,10 +33,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tripss/nestjs-query.git",
+    "url": "git+https://github.com/La-patate-du-coin/nestjs-query.git",
     "directory": "packages/query-typeorm"
   },
   "bugs": {
-    "url": "https://github.com/tripss/nestjs-query/issues"
+    "url": "https://github.com/La-patate-du-coin/nestjs-query/issues"
   }
 }

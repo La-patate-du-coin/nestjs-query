@@ -1,9 +1,9 @@
 {
-  "name": "@ptc-org/nestjs-query-core",
+  "name": "@la-patate-du-coin/nestjs-query-core",
   "version": "2.3.0",
   "description": "Base query package",
   "author": "doug-martin <doug@dougamartin.com>",
-  "homepage": "https://github.com/tripss/nestjs-query#readme",
+  "homepage": "https://github.com/La-patate-du-coin/nestjs-query#readme",
   "license": "MIT",
   "main": "src/index.js",
   "types": "src/index.d.ts",
@@ -19,15 +19,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tripss/nestjs-query.git"
+    "url": "git+https://github.com/La-patate-du-coin/nestjs-query.git"
   },
   "bugs": {
-    "url": "https://github.com/tripss/nestjs-query/issues"
+    "url": "https://github.com/La-patate-du-coin/nestjs-query/issues"
   },
   "dependencies": {
     "lodash.merge": "^4.6.2",
     "reflect-metadata": "^0.1.13",
-    "tslib": "^2.4.0"
+    "tslib": "^2.5.0"
   },
   "peerDependencies": {
     "@nestjs/common": "^8.0.0 || ^9.0.0",

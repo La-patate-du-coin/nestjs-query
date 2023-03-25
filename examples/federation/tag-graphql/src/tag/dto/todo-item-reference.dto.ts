@@ -1,5 +1,5 @@
+import { CursorConnection } from '@la-patate-du-coin/nestjs-query-graphql'
 import { Directive, Field, ID, ObjectType } from '@nestjs/graphql'
-import { CursorConnection } from '@ptc-org/nestjs-query-graphql'
 
 import { TagTodoItemDTO } from './tag-todo-item.dto'
 

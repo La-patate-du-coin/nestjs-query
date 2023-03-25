@@ -2,8 +2,8 @@
 title: DTOs
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
 
 The `query-graphql` package leverages most decorators from [`@nestjs/graphql`](https://docs.nestjs.com/graphql/quick-start) and [TypeGraphQL](https://typegraphql.ml), with the exception of `FilterableField`.
 
@@ -19,40 +19,40 @@ If you use the @nestjs/graphql `Field` decorator it will not be exposed in the q
 ### Options
 
 In addition to the normal field options you can also specify the following options
-* `allowedComparisons` - An array of allowed comparisons. You can use this option to allow a subset of filter comparisons when querying through graphql.
-  * This option is useful if the field is expensive to query on for certain operators, or your data source supports a limited set of comparisons.
-* `filterRequired` - When set to `true` the field will be required whenever a `filter` is used. The `filter` requirement applies to all `read`, `update`, and `delete` endpoints that use a `filter`.
-  * The `filterRequired` option is useful when your entity has an index that requires a subset of fields to be used to provide certain level of query performance.
-  * **NOTE**: When a field is a required in a filter the default `filter` option is ignored.
-* `filterOnly`- When set to `true`, the field will only appear as `filter` but isn't included as field inside the `ObjectType`.
-  * This option is useful if you want to filter on foreign keys without resolving the relation but you don't want to have the foreign key show up as field in your query type for the DTO. This might be especially useful for [federated relations](./federation.mdx#reference-decorator)
+
+- `allowedComparisons` - An array of allowed comparisons. You can use this option to allow a subset of filter comparisons when querying through graphql.
+  - This option is useful if the field is expensive to query on for certain operators, or your data source supports a limited set of comparisons.
+- `filterRequired` - When set to `true` the field will be required whenever a `filter` is used. The `filter` requirement applies to all `read`, `update`, and `delete` endpoints that use a `filter`.
+  - The `filterRequired` option is useful when your entity has an index that requires a subset of fields to be used to provide certain level of query performance.
+  - **NOTE**: When a field is a required in a filter the default `filter` option is ignored.
+- `filterOnly`- When set to `true`, the field will only appear as `filter` but isn't included as field inside the `ObjectType`.
+  - This option is useful if you want to filter on foreign keys without resolving the relation but you don't want to have the foreign key show up as field in your query type for the DTO. This might be especially useful for [federated relations](./federation.mdx#reference-decorator)
 
 ### Example
 
 In the following example we allow `id`, `title`, and `completed` to be used in queries.
 
 ```ts title="todo-item.dto.ts"
-import { FilterableField, IDField } from '@ptc-org/nestjs-query-graphql';
-import { ObjectType, ID, GraphQLISODateTime, Field } from '@nestjs/graphql';
+import { FilterableField, IDField } from '@la-patate-du-coin/nestjs-query-graphql'
+import { ObjectType, ID, GraphQLISODateTime, Field } from '@nestjs/graphql'
 
 @ObjectType('TodoItem')
 export class TodoItemDTO {
   @IDField(() => ID)
-  id!: string;
+  id!: string
 
   @FilterableField()
-  title!: string;
+  title!: string
 
   @FilterableField()
-  completed!: boolean;
+  completed!: boolean
 
   @Field(() => GraphQLISODateTime)
-  created!: Date;
+  created!: Date
 
   @Field(() => GraphQLISODateTime)
-  updated!: Date;
+  updated!: Date
 }
-
 ```
 
 ### Example - allowedComparisons
@@ -64,27 +64,26 @@ For the `id` field only `eq`, `neq`, `in`, and `notIn` comparisons will be expos
 The `title` field will only allow `eq`, `like`, and `notLike`.
 
 ```ts title="todo-item.dto.ts" {6,9}
-import { FilterableField } from '@ptc-org/nestjs-query-graphql';
-import { ObjectType, ID, GraphQLISODateTime, Field } from '@nestjs/graphql';
+import { FilterableField } from '@la-patate-du-coin/nestjs-query-graphql'
+import { ObjectType, ID, GraphQLISODateTime, Field } from '@nestjs/graphql'
 
 @ObjectType('TodoItem')
 export class TodoItemDTO {
   @IDField(() => ID, { allowedComparisons: ['eq', 'neq', 'in', 'notIn'] })
-  id!: string;
+  id!: string
 
   @FilterableField({ allowedComparisons: ['eq', 'like', 'notLike'] })
-  title!: string;
+  title!: string
 
   @FilterableField()
-  completed!: boolean;
+  completed!: boolean
 
   @Field(() => GraphQLISODateTime)
-  created!: Date;
+  created!: Date
 
   @Field(() => GraphQLISODateTime)
-  updated!: Date;
+  updated!: Date
 }
-
 ```
 
 ### Example - filterRequired
@@ -92,64 +91,64 @@ export class TodoItemDTO {
 In the following example the `filterRequired` option is applied to the `completed` field, ensuring that all endpoints that use a filter will require a comparison on the `completed` field.
 
 ```ts title="todo-item.dto.ts" {12}
-import { FilterableField, IDField } from '@ptc-org/nestjs-query-graphql';
-import { ObjectType, ID, GraphQLISODateTime, Field } from '@nestjs/graphql';
+import { FilterableField, IDField } from '@la-patate-du-coin/nestjs-query-graphql'
+import { ObjectType, ID, GraphQLISODateTime, Field } from '@nestjs/graphql'
 
 @ObjectType('TodoItem')
 export class TodoItemDTO {
   @IDField(() => ID)
-  id!: string;
+  id!: string
 
   @FilterableField()
-  title!: string;
+  title!: string
 
   @FilterableField({ filterRequired: true })
-  completed!: boolean;
+  completed!: boolean
 
   @Field(() => GraphQLISODateTime)
-  created!: Date;
+  created!: Date
 
   @Field(() => GraphQLISODateTime)
-  updated!: Date;
+  updated!: Date
 }
 ```
 
 ### Example - filterOnly
 
 In the following example the `filterOnly` option is applied to the `assigneeId` field, which makes a query filterable
- by the id of an assigned user but won't return the `assigneeId` as field.
+by the id of an assigned user but won't return the `assigneeId` as field.
 
 ```ts title="todo-item.dto.ts"
-import { FilterableField, IDField } from '@ptc-org/nestjs-query-graphql';
-import { ObjectType, ID, GraphQLISODateTime, Field } from '@nestjs/graphql';
+import { FilterableField, IDField } from '@la-patate-du-coin/nestjs-query-graphql'
+import { ObjectType, ID, GraphQLISODateTime, Field } from '@nestjs/graphql'
 
 @ObjectType('TodoItem')
 @Relation('assignee', () => UserDTO)
 export class TodoItemDTO {
   @IDField(() => ID)
-  id!: string;
+  id!: string
 
   @FilterableField()
-  title!: string;
+  title!: string
 
   @FilterableField()
-  completed!: boolean;
+  completed!: boolean
 
   @FilterableField({ filterOnly: true })
-  assigneeId!: string;
+  assigneeId!: string
 
   @Field(() => GraphQLISODateTime)
-  created!: Date;
+  created!: Date
 
   @Field(() => GraphQLISODateTime)
-  updated!: Date;
+  updated!: Date
 }
 ```
 
 ## `@IDField`
 
 By default `nestjs-query` uses the default graphql `ID` scalar, if you need to use a different `graphql` `scalar`
-type you can  `@IDField` decorator. `nestjs-query` will `scalar` type passed to the `@IDField` for all auto-generated
+type you can `@IDField` decorator. `nestjs-query` will `scalar` type passed to the `@IDField` for all auto-generated
 `query` and `mutation` endpoints that rely on an input for the `id` (e.g. `findById`, `updateOne`, `deleteOne`).
 
 :::note
@@ -162,31 +161,6 @@ by default. In the future if you need to change the type later on it should be a
 that use the `@IDField` decorator to update.
 :::
 
-:::info
-If you are using `query-typegoose`there is a known "won't fix" bug with `class-transformer`, where ObjectIds end up getting new values, instead of the hex value they should be. To remedy this, we have a special decorator called '@ObjectId`. So, DTO's should use this as follow:
-
-```ts 
-import { Field, GraphQLISODateTime, ID, ObjectType } from '@nestjs/graphql'
-import { CursorConnection, FilterableField, KeySet, ObjectId, QueryOptions } from '@ptc-org/nestjs-query-graphql'
-import mongoose from 'mongoose'
-
-import { AuthGuard } from '../../auth.guard'
-import { SubTaskDTO } from '../../sub-task/dto/sub-task.dto'
-import { TagDTO } from '../../tag/dto/tag.dto'
-
-@ObjectType('TodoItem')
-@KeySet(['id'])
-@QueryOptions({ enableTotalCount: true })
-@CursorConnection('subTasks', () => SubTaskDTO, { disableRemove: true, guards: [AuthGuard] })
-@CursorConnection('tags', () => TagDTO, { guards: [AuthGuard] })
-export class TodoItemDTO {
-  @ObjectId()
-  _id: mongoose.Types.ObjectId
-```
-
-Notice the last two lines of code.
-:::
-
 ### Example
 
 A common use case is to obscure an auto-incremented primary key.
@@ -194,44 +168,43 @@ A common use case is to obscure an auto-incremented primary key.
 In this example we'll do a simple version of that by declaring a new `ID` scalar that will `base64` encode all ids.
 
 ```ts title="common/custom-id.scalar.ts" {11-12,16-17,21-25}
-import { Scalar, CustomScalar } from '@nestjs/graphql';
-import { Kind, ValueNode } from 'graphql';
+import { Scalar, CustomScalar } from '@nestjs/graphql'
+import { Kind, ValueNode } from 'graphql'
 
 @Scalar('CustomID')
 export class CustomIDScalar implements CustomScalar<string, number> {
-  description = 'ID custom scalar type';
+  description = 'ID custom scalar type'
 
-  private idPrefix = 'id:';
+  private idPrefix = 'id:'
 
   parseValue(value: string): number {
     // parse a `base64` encoded id from the client when provided as a variable
-    return parseInt(Buffer.from(value, 'base64').toString('utf8').replace(this.idPrefix, ''), 10);
+    return parseInt(Buffer.from(value, 'base64').toString('utf8').replace(this.idPrefix, ''), 10)
   }
 
   serialize(value: number): string {
     // serialize a number into the base64 representation
-    return Buffer.from(`${this.idPrefix}${value}`, 'utf8').toString('base64');
+    return Buffer.from(`${this.idPrefix}${value}`, 'utf8').toString('base64')
   }
 
   parseLiteral(ast: ValueNode): number | null {
     // parse a `base64` encoded id from the client when hardcoded into the query
     if (ast.kind === Kind.STRING) {
-      return this.parseValue(ast.value);
+      return this.parseValue(ast.value)
     }
-    return null;
+    return null
   }
 }
-
 ```
 
 Now lets register our `CustomID` scalar with `nestjs`.
 
 ```ts title="common/common.module.ts"
-import { Module } from '@nestjs/common';
-import { CustomIDScalar } from './custom-id.scalar';
+import { Module } from '@nestjs/common'
+import { CustomIDScalar } from './custom-id.scalar'
 
 @Module({
-  providers: [CustomIDScalar],
+  providers: [CustomIDScalar]
 })
 export class CommonModule {}
 ```
@@ -239,29 +212,29 @@ export class CommonModule {}
 Once your `CustomIDScalar` is registered you can use it in your `DTOS`.
 
 ```ts title="todo-item/dto/todo-item.dto.ts" {7}
-import { FilterableField, IDField } from '@ptc-org/nestjs-query-graphql';
-import { ObjectType, GraphQLISODateTime } from '@nestjs/graphql';
-import { CustomIDScalar } from '../../common/custom-id.scalar';
+import { FilterableField, IDField } from '@la-patate-du-coin/nestjs-query-graphql'
+import { ObjectType, GraphQLISODateTime } from '@nestjs/graphql'
+import { CustomIDScalar } from '../../common/custom-id.scalar'
 
 @ObjectType('TodoItem')
 export class TodoItemDTO {
   @IDField(() => CustomIDScalar)
-  id!: string;
+  id!: string
 
   @FilterableField()
-  title!: string;
+  title!: string
 
   @FilterableField({ nullable: true })
-  description?: string;
+  description?: string
 
   @FilterableField()
-  completed!: boolean;
+  completed!: boolean
 
   @FilterableField(() => GraphQLISODateTime, { filterOnly: true })
-  created!: Date;
+  created!: Date
 
   @FilterableField(() => GraphQLISODateTime, { filterOnly: true })
-  updated!: Date;
+  updated!: Date
 }
 ```
 
@@ -273,29 +246,29 @@ type for the input.
 If you want to disable filtering and sorting on the `id` field you can use the `disableFilter` option.
 
 ```ts title="todo-item/dto/todo-item.dto.ts" {7}
-import { FilterableField, IDField } from '@ptc-org/nestjs-query-graphql';
-import { ObjectType, GraphQLISODateTime } from '@nestjs/graphql';
-import { CustomIDScalar } from '../../common/custom-id.scalar';
+import { FilterableField, IDField } from '@la-patate-du-coin/nestjs-query-graphql'
+import { ObjectType, GraphQLISODateTime } from '@nestjs/graphql'
+import { CustomIDScalar } from '../../common/custom-id.scalar'
 
 @ObjectType('TodoItem')
 export class TodoItemDTO {
   @IDField(() => CustomIDScalar, { disableFilter: true })
-  id!: string;
+  id!: string
 
   @FilterableField()
-  title!: string;
+  title!: string
 
   @FilterableField({ nullable: true })
-  description?: string;
+  description?: string
 
   @FilterableField()
-  completed!: boolean;
+  completed!: boolean
 
   @FilterableField(() => GraphQLISODateTime, { filterOnly: true })
-  created!: Date;
+  created!: Date
 
   @FilterableField(() => GraphQLISODateTime, { filterOnly: true })
-  updated!: Date;
+  updated!: Date
 }
 ```
 
@@ -316,28 +289,27 @@ The default filter is only used when a filter is not provided in a query.
 In this example we specify the default filter to be `completed IS TRUE`.
 
 ```ts title="todo-item.dto.ts" {5}
-import { FilterableField, IDField, QueryOptions } from '@ptc-org/nestjs-query-graphql';
-import { ObjectType, ID, GraphQLISODateTime, Field } from '@nestjs/graphql';
+import { FilterableField, IDField, QueryOptions } from '@la-patate-du-coin/nestjs-query-graphql'
+import { ObjectType, ID, GraphQLISODateTime, Field } from '@nestjs/graphql'
 
 @ObjectType('TodoItem')
 @QueryOptions({ defaultFilter: { completed: { is: true } } })
 export class TodoItemDTO {
   @IDField(() => ID)
-  id!: string;
+  id!: string
 
   @FilterableField()
-  title!: string;
+  title!: string
 
   @FilterableField()
-  completed!: boolean;
+  completed!: boolean
 
   @Field(() => GraphQLISODateTime)
-  created!: Date;
+  created!: Date
 
   @Field(() => GraphQLISODateTime)
-  updated!: Date;
+  updated!: Date
 }
-
 ```
 
 ---
@@ -352,28 +324,27 @@ In this example we specify the `defaultResultSize` to 5 which means if a page si
 returned.
 
 ```ts title="todo-item.dto.ts" {5}
-import { FilterableField, IDField, QueryOptions } from '@ptc-org/nestjs-query-graphql';
-import { ObjectType, ID, GraphQLISODateTime, Field } from '@nestjs/graphql';
+import { FilterableField, IDField, QueryOptions } from '@la-patate-du-coin/nestjs-query-graphql'
+import { ObjectType, ID, GraphQLISODateTime, Field } from '@nestjs/graphql'
 
 @ObjectType('TodoItem')
 @QueryOptions({ defaultResultSize: 5 })
 export class TodoItemDTO {
   @IDField(() => ID)
-  id!: string;
+  id!: string
 
   @FilterableField()
-  title!: string;
+  title!: string
 
   @FilterableField()
-  completed!: boolean;
+  completed!: boolean
 
   @Field(() => GraphQLISODateTime)
-  created!: Date;
+  created!: Date
 
   @Field(() => GraphQLISODateTime)
-  updated!: Date;
+  updated!: Date
 }
-
 ```
 
 ### Limiting Results Size
@@ -389,28 +360,27 @@ You can disable `maxResultSize` by setting the option to `-1`.
 In this example we specify limit the max number of records an end user can request to 20.
 
 ```ts title="todo-item.dto.ts" {5}
-import { FilterableField, IDField, QueryOptions } from '@ptc-org/nestjs-query-graphql';
-import { ObjectType, ID, GraphQLISODateTime, Field } from '@nestjs/graphql';
+import { FilterableField, IDField, QueryOptions } from '@la-patate-du-coin/nestjs-query-graphql'
+import { ObjectType, ID, GraphQLISODateTime, Field } from '@nestjs/graphql'
 
 @ObjectType('TodoItem')
 @QueryOptions({ maxResultsSize: 20 })
 export class TodoItemDTO {
   @IDField(() => ID)
-  id!: string;
+  id!: string
 
   @FilterableField()
-  title!: string;
+  title!: string
 
   @FilterableField()
-  completed!: boolean;
+  completed!: boolean
 
   @Field(() => GraphQLISODateTime)
-  created!: Date;
+  created!: Date
 
   @Field(() => GraphQLISODateTime)
-  updated!: Date;
+  updated!: Date
 }
-
 ```
 
 ---
@@ -423,62 +393,60 @@ For a more in-depth overview of paging check out the [paging docs](./paging.mdx)
 
 You can override the default `pagingStrategy` to one of the following alternatives
 
-* `OFFSET` - sets paging to allow `limit` and `offset` fields, and returns an `OffsetConnection`.
-* `NONE` - turn off all paging and always return an `ArrayConnection`.
+- `OFFSET` - sets paging to allow `limit` and `offset` fields, and returns an `OffsetConnection`.
+- `NONE` - turn off all paging and always return an `ArrayConnection`.
 
 When using the `OFFSET` strategy your the paging arguments for a many query will accept a `limit` and/or `offset`.
 This will also change the return type from a `CursorConnection` to an `OffsetConnection`.
 
 ```ts title="todo-item.dto.ts" {5}
-import { FilterableField, IDField, QueryOptions, PagingStrategies } from '@ptc-org/nestjs-query-graphql';
-import { ObjectType, ID, GraphQLISODateTime, Field } from '@nestjs/graphql';
+import { FilterableField, IDField, QueryOptions, PagingStrategies } from '@la-patate-du-coin/nestjs-query-graphql'
+import { ObjectType, ID, GraphQLISODateTime, Field } from '@nestjs/graphql'
 
 @ObjectType('TodoItem')
 @QueryOptions({ pagingStrategy: PagingStrategies.OFFSET })
 export class TodoItemDTO {
   @IDField(() => ID)
-  id!: string;
+  id!: string
 
   @FilterableField()
-  title!: string;
+  title!: string
 
   @FilterableField()
-  completed!: boolean;
+  completed!: boolean
 
   @Field(() => GraphQLISODateTime)
-  created!: Date;
+  created!: Date
 
   @Field(() => GraphQLISODateTime)
-  updated!: Date;
+  updated!: Date
 }
-
 ```
 
 To disable paging entirely you can use the `NONE` `pagingStrategy`. When using `NONE` an `ArrayConnection` will be returned.
 
 ```ts title="todo-item.dto.ts" {5}
-import { FilterableField, IDField, QueryOptions, PagingStrategies } from '@ptc-org/nestjs-query-graphql';
-import { ObjectType, ID, GraphQLISODateTime, Field } from '@nestjs/graphql';
+import { FilterableField, IDField, QueryOptions, PagingStrategies } from '@la-patate-du-coin/nestjs-query-graphql'
+import { ObjectType, ID, GraphQLISODateTime, Field } from '@nestjs/graphql'
 
 @ObjectType('TodoItem')
 @QueryOptions({ pagingStrategy: PagingStrategies.NONE })
 export class TodoItemDTO {
   @IDField(() => ID)
-  id!: string;
+  id!: string
 
   @FilterableField()
-  title!: string;
+  title!: string
 
   @FilterableField()
-  completed!: boolean;
+  completed!: boolean
 
   @Field(() => GraphQLISODateTime)
-  created!: Date;
+  created!: Date
 
   @Field(() => GraphQLISODateTime)
-  updated!: Date;
+  updated!: Date
 }
-
 ```
 
 ### Paging with Total Count
@@ -500,28 +468,27 @@ To enable the `totalCount` field for connections set the `enableTotalCount` opti
 `@QueryOptions` decorator.
 
 ```ts title="todo-item.dto.ts" {5}
-import { FilterableField, IDField, QueryOptions, PagingStrategies } from '@ptc-org/nestjs-query-graphql';
-import { ObjectType, ID, GraphQLISODateTime, Field } from '@nestjs/graphql';
+import { FilterableField, IDField, QueryOptions, PagingStrategies } from '@la-patate-du-coin/nestjs-query-graphql'
+import { ObjectType, ID, GraphQLISODateTime, Field } from '@nestjs/graphql'
 
 @ObjectType('TodoItem')
 @QueryOptions({ enableTotalCount: true })
 export class TodoItemDTO {
   @IDField(() => ID)
-  id!: string;
+  id!: string
 
   @FilterableField()
-  title!: string;
+  title!: string
 
   @FilterableField()
-  completed!: boolean;
+  completed!: boolean
 
   @Field(() => GraphQLISODateTime)
-  created!: Date;
+  created!: Date
 
   @Field(() => GraphQLISODateTime)
-  updated!: Date;
+  updated!: Date
 }
-
 ```
 
 When setting `enableTotalCount` to `true` you will be able to query for `totalCount` on `cursor` or offset connections
@@ -554,7 +521,6 @@ values={[
     }
   }
 }
-
 ```
 
 </TabItem>
@@ -625,29 +591,28 @@ When querying the default is based on the persistence layer. You can override th
 In this example we specify the default sort to be by `title`.
 
 ```ts title="todo-item.dto.ts" {5}
-import { FilterableField, IDField, QueryOptions, PagingStrategies } from '@ptc-org/nestjs-query-graphql';
-import { SortDirection } from '@ptc-org/nestjs-query-core';
-import { ObjectType, ID, GraphQLISODateTime, Field } from '@nestjs/graphql';
+import { FilterableField, IDField, QueryOptions, PagingStrategies } from '@la-patate-du-coin/nestjs-query-graphql'
+import { SortDirection } from '@la-patate-du-coin/nestjs-query-core'
+import { ObjectType, ID, GraphQLISODateTime, Field } from '@nestjs/graphql'
 
 @ObjectType('TodoItem')
 @QueryOptions({ defaultSort: [{ field: 'title', direction: SortDirection.ASC }] })
 export class TodoItemDTO {
   @IDField(() => ID)
-  id!: string;
+  id!: string
 
   @FilterableField()
-  title!: string;
+  title!: string
 
   @FilterableField()
-  completed!: boolean;
+  completed!: boolean
 
   @Field(() => GraphQLISODateTime)
-  created!: Date;
+  created!: Date
 
   @Field(() => GraphQLISODateTime)
-  updated!: Date;
+  updated!: Date
 }
-
 ```
 
 ### Allowed Boolean Expressions
@@ -658,28 +623,27 @@ using the `allowedBooleanExpressions` option.
 In this example we will only allow `and` expressions.
 
 ```ts title="todo-item.dto.ts" {5}
-import { FilterableField, IDField, QueryOptions, PagingStrategies } from '@ptc-org/nestjs-query-graphql';
-import { ObjectType, ID, GraphQLISODateTime, Field } from '@nestjs/graphql';
+import { FilterableField, IDField, QueryOptions, PagingStrategies } from '@la-patate-du-coin/nestjs-query-graphql'
+import { ObjectType, ID, GraphQLISODateTime, Field } from '@nestjs/graphql'
 
 @ObjectType('TodoItem')
 @QueryOptions({ allowedBooleanExpressions: ['and'] })
 export class TodoItemDTO {
   @IDField(() => ID)
-  id!: string;
+  id!: string
 
   @FilterableField()
-  title!: string;
+  title!: string
 
   @FilterableField()
-  completed!: boolean;
+  completed!: boolean
 
   @Field(() => GraphQLISODateTime)
-  created!: Date;
+  created!: Date
 
   @Field(() => GraphQLISODateTime)
-  updated!: Date;
+  updated!: Date
 }
-
 ```
 
 To turn off all boolean expressions you can set `allowedBooleanExpressions` to an empty array. This is useful if you
@@ -688,26 +652,25 @@ only allow filtering on certain fields and you want to disable all complex filte
 In this example we will only allow `eq` comparisons on the id field and disable all `and`/`or` boolean expressions.
 
 ```ts title="todo-item.dto.ts" {5,7}
-import { FilterableField, IDField, QueryOptions, PagingStrategies } from '@ptc-org/nestjs-query-graphql';
-import { ObjectType, ID, GraphQLISODateTime, Field } from '@nestjs/graphql';
+import { FilterableField, IDField, QueryOptions, PagingStrategies } from '@la-patate-du-coin/nestjs-query-graphql'
+import { ObjectType, ID, GraphQLISODateTime, Field } from '@nestjs/graphql'
 
 @ObjectType('TodoItem')
 @QueryOptions({ allowedBooleanExpressions: ['and'] })
 export class TodoItemDTO {
   @IDField(() => ID, { allowedComparisons: ['eq'] })
-  id!: string;
+  id!: string
 
   @Field()
-  title!: string;
+  title!: string
 
   @Field()
-  completed!: boolean;
+  completed!: boolean
 
   @Field(() => GraphQLISODateTime)
-  created!: Date;
+  created!: Date
 
   @Field(() => GraphQLISODateTime)
-  updated!: Date;
+  updated!: Date
 }
-
 ```

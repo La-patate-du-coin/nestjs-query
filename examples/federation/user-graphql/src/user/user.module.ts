@@ -1,6 +1,6 @@
+import { NestjsQueryGraphQLModule } from '@la-patate-du-coin/nestjs-query-graphql'
+import { NestjsQueryTypeOrmModule } from '@la-patate-du-coin/nestjs-query-typeorm'
 import { Module } from '@nestjs/common'
-import { NestjsQueryGraphQLModule } from '@ptc-org/nestjs-query-graphql'
-import { NestjsQueryTypeOrmModule } from '@ptc-org/nestjs-query-typeorm'
 
 import { UserDTO } from './dto/user.dto'
 import { UserInputDTO } from './dto/user-input.dto'

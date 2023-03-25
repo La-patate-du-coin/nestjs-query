@@ -1,4 +1,3 @@
-import { Injectable } from '@nestjs/common'
 import {
   BeforeCreateManyHook,
   BeforeCreateOneHook,
@@ -8,7 +7,8 @@ import {
   CreateOneInputType,
   UpdateManyInputType,
   UpdateOneInputType
-} from '@ptc-org/nestjs-query-graphql'
+} from '@la-patate-du-coin/nestjs-query-graphql'
+import { Injectable } from '@nestjs/common'
 
 import { GqlContext } from './auth/auth.guard'
 import { AuthService } from './auth/auth.service'

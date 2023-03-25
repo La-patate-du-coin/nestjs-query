@@ -2,8 +2,8 @@
 title: Subscriptions
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
 
 :::note
 Before reading this it is recommended to read the [nestjs graphql subscriptions docs](https://docs.nestjs.com/graphql/subscriptions).
@@ -11,11 +11,11 @@ Before reading this it is recommended to read the [nestjs graphql subscriptions 
 
 `nestjs-query` includes out of the box subscription support. When enabling subscriptions the following subscriptions will be created
 
-* `created{ObjectName}` - published when the `createOne` or `createMany` mutation is called.
-* `updatedOne{ObjectName}`  - published when the `updateOne` mutation is called.
-* `updatedMany{ObjectName}` - published when `updateMany` mutation is called.
-* `deletedOne{ObjectName}` - published when the `deleteOne` mutation is called.
-* `deletedMany{ObjectName}`  - published when `deleteMany` mutation is called.
+- `created{ObjectName}` - published when the `createOne` or `createMany` mutation is called.
+- `updatedOne{ObjectName}` - published when the `updateOne` mutation is called.
+- `updatedMany{ObjectName}` - published when `updateMany` mutation is called.
+- `deletedOne{ObjectName}` - published when the `deleteOne` mutation is called.
+- `deletedMany{ObjectName}` - published when `deleteMany` mutation is called.
 
 ## Enabling Subscriptions
 
@@ -25,11 +25,11 @@ In both cases you need to set the `enableSubscriptions` option to `true`.
 
 In the below example the following subscriptions will be exposed.
 
-* `createdTodoItem` - published when the `createOne` or `createMany` mutation is called.
-* `updatedOneTodoItem`  - published when the `updateOne` mutation is called.
-* `updatedManyTodoItems` - published when `updateMany` mutation is called.
-* `deletedOneTodoItem` - published when the `deleteOne` mutation is called.
-* `deletedManyTodoItems`  - published when `deleteMany` mutation is called.
+- `createdTodoItem` - published when the `createOne` or `createMany` mutation is called.
+- `updatedOneTodoItem` - published when the `updateOne` mutation is called.
+- `updatedManyTodoItems` - published when `updateMany` mutation is called.
+- `deletedOneTodoItem` - published when the `deleteOne` mutation is called.
+- `deletedManyTodoItems` - published when `deleteMany` mutation is called.
 
 <Tabs
   defaultValue="module"
@@ -41,26 +41,28 @@ In the below example the following subscriptions will be exposed.
 <TabItem value="module">
 
 ```ts title="todo-item.module.ts" {17}
-import { NestjsQueryGraphQLModule } from '@ptc-org/nestjs-query-graphql';
-import { NestjsQueryTypeOrmModule } from '@ptc-org/nestjs-query-typeorm';
-import { Module } from '@nestjs/common';
-import { TodoItemInputDTO } from './todo-item.input';
-import { TodoItemDTO } from './todo-item.dto';
-import { TodoItemEntity } from './todo-item.entity';
+import { NestjsQueryGraphQLModule } from '@la-patate-du-coin/nestjs-query-graphql'
+import { NestjsQueryTypeOrmModule } from '@la-patate-du-coin/nestjs-query-typeorm'
+import { Module } from '@nestjs/common'
+import { TodoItemInputDTO } from './todo-item.input'
+import { TodoItemDTO } from './todo-item.dto'
+import { TodoItemEntity } from './todo-item.entity'
 
 @Module({
   imports: [
     NestjsQueryGraphQLModule.forFeature({
       imports: [NestjsQueryTypeOrmModule.forFeature([TodoItemEntity])],
-      resolvers: [{
-        DTOClass: TodoItemDTO,
-        EntityClass: TodoItemEntity,
-        CreateDTOClass: TodoItemInputDTO,
-        UpdateDTOClass: TodoItemInputDTO,
-        enableSubscriptions: true,
-      }],
-    }),
-  ],
+      resolvers: [
+        {
+          DTOClass: TodoItemDTO,
+          EntityClass: TodoItemEntity,
+          CreateDTOClass: TodoItemInputDTO,
+          UpdateDTOClass: TodoItemInputDTO,
+          enableSubscriptions: true
+        }
+      ]
+    })
+  ]
 })
 export class TodoItemModule {}
 ```
@@ -71,25 +73,25 @@ export class TodoItemModule {}
 When manually defining your resolver you must also provide a readonly `pubSub` property. In this the default `PubSub` implementation is injected.
 
 ```ts title="todo-item.resolver.ts" {13,17}
-import { QueryService, InjectQueryService } from '@ptc-org/nestjs-query-core';
-import { CRUDResolver, InjectPubSub } from '@ptc-org/nestjs-query-graphql';
-import { Resolver } from '@nestjs/graphql';
-import { PubSub } from 'graphql-subscriptions';
-import { TodoItemInputDTO } from './todo-item.input';
-import { TodoItemDTO } from './todo-item.dto';
-import { TodoItemEntity } from './todo-item.entity';
+import { QueryService, InjectQueryService } from '@la-patate-du-coin/nestjs-query-core'
+import { CRUDResolver, InjectPubSub } from '@la-patate-du-coin/nestjs-query-graphql'
+import { Resolver } from '@nestjs/graphql'
+import { PubSub } from 'graphql-subscriptions'
+import { TodoItemInputDTO } from './todo-item.input'
+import { TodoItemDTO } from './todo-item.dto'
+import { TodoItemEntity } from './todo-item.entity'
 
 @Resolver()
 export class TodoItemResolver extends CRUDResolver(TodoItemDTO, {
   CreateDTOClass: TodoItemInputDTO,
   UpdateDTOClass: TodoItemInputDTO,
-  enableSubscriptions: true,
+  enableSubscriptions: true
 }) {
   constructor(
-      @InjectQueryService(TodoItemEntity) readonly service: QueryService<TodoItemEntity>,
-      @InjectPubSub() readonly pubSub: PubSub
+    @InjectQueryService(TodoItemEntity) readonly service: QueryService<TodoItemEntity>,
+    @InjectPubSub() readonly pubSub: PubSub
   ) {
-    super(service);
+    super(service)
   }
 }
 ```
@@ -113,13 +115,13 @@ In this example the `updatedMany` and `deletedMany` subscriptions are disabled.
 <TabItem value="module">
 
 ```ts title="todo-item.module.ts" {18-19}
-import { NestjsQueryGraphQLModule } from '@ptc-org/nestjs-query-graphql';
-import { NestjsQueryTypeOrmModule } from '@ptc-org/nestjs-query-typeorm';
-import { Module } from '@nestjs/common';
-import { TodoItemInputDTO } from './dto/todo-item-input.dto';
-import { TodoItemUpdateDTO } from './dto/todo-item-update.dto';
-import { TodoItemDTO } from './dto/todo-item.dto';
-import { TodoItemEntity } from './todo-item.entity';
+import { NestjsQueryGraphQLModule } from '@la-patate-du-coin/nestjs-query-graphql'
+import { NestjsQueryTypeOrmModule } from '@la-patate-du-coin/nestjs-query-typeorm'
+import { Module } from '@nestjs/common'
+import { TodoItemInputDTO } from './dto/todo-item-input.dto'
+import { TodoItemUpdateDTO } from './dto/todo-item-update.dto'
+import { TodoItemDTO } from './dto/todo-item.dto'
+import { TodoItemEntity } from './todo-item.entity'
 
 @Module({
   imports: [
@@ -133,27 +135,26 @@ import { TodoItemEntity } from './todo-item.entity';
           UpdateDTOClass: TodoItemUpdateDTO,
           enableSubscriptions: true,
           update: { many: { enableSubscriptions: false } },
-          delete: { many: { enableSubscriptions: false } },
-        },
-      ],
-    }),
-  ],
+          delete: { many: { enableSubscriptions: false } }
+        }
+      ]
+    })
+  ]
 })
 export class TodoItemModule {}
-
 ```
 
 </TabItem>
 <TabItem value="resolver">
 
 ```ts title="todo-item.resolver.ts" {14-15}
-import { QueryService, InjectQueryService } from '@ptc-org/nestjs-query-core';
-import { CRUDResolver, InjectPubSub } from '@ptc-org/nestjs-query-graphql';
-import { Resolver } from '@nestjs/graphql';
-import { PubSub } from 'graphql-subscriptions';
-import { TodoItemInputDTO } from './todo-item.input';
-import { TodoItemDTO } from './todo-item.dto';
-import { TodoItemEntity } from './todo-item.entity';
+import { QueryService, InjectQueryService } from '@la-patate-du-coin/nestjs-query-core'
+import { CRUDResolver, InjectPubSub } from '@la-patate-du-coin/nestjs-query-graphql'
+import { Resolver } from '@nestjs/graphql'
+import { PubSub } from 'graphql-subscriptions'
+import { TodoItemInputDTO } from './todo-item.input'
+import { TodoItemDTO } from './todo-item.dto'
+import { TodoItemEntity } from './todo-item.entity'
 
 @Resolver()
 export class TodoItemResolver extends CRUDResolver(TodoItemDTO, {
@@ -161,13 +162,13 @@ export class TodoItemResolver extends CRUDResolver(TodoItemDTO, {
   UpdateDTOClass: TodoItemInputDTO,
   enableSubscriptions: true,
   update: { many: { enableSubscriptions: false } },
-  delete: { many: { enableSubscriptions: false } },
+  delete: { many: { enableSubscriptions: false } }
 }) {
   constructor(
-      @InjectQueryService(TodoItemEntity) readonly service: QueryService<TodoItemEntity>,
-      @InjectPubSub() readonly pubSub: PubSub
+    @InjectQueryService(TodoItemEntity) readonly service: QueryService<TodoItemEntity>,
+    @InjectPubSub() readonly pubSub: PubSub
   ) {
-    super(service);
+    super(service)
   }
 }
 ```
@@ -185,9 +186,7 @@ For example to filter for all created `TodoItems` where the like starts with `Fo
 
 ```graphql
 subscription {
-  createdTodoItem(
-    input: { filter: { title: { like: "Foo%" }, completed: { is: true } } }
-  ) {
+  createdTodoItem(input: { filter: { title: { like: "Foo%" }, completed: { is: true } } }) {
     id
     title
     description
@@ -205,10 +204,10 @@ You can override the default `PubSub` implementation by creating your own provid
 Below is an example provider.
 
 ```ts title="redis-pub-sub.provider.ts"
-import { pubSubToken } from '@ptc-org/nestjs-query-graphql';
-import { RedisPubSub } from 'graphql-redis-subscriptions';
-import Redis from 'ioredis';
-import { Provider } from '@nestjs/common';
+import { pubSubToken } from '@la-patate-du-coin/nestjs-query-graphql'
+import { RedisPubSub } from 'graphql-redis-subscriptions'
+import Redis from 'ioredis'
+import { Provider } from '@nestjs/common'
 
 export class RedisPubSubProvider {
   static provider(): Provider {
@@ -216,25 +215,24 @@ export class RedisPubSubProvider {
       provide: pubSubToken(),
       useValue: new RedisPubSub({
         publisher: new Redis(),
-        subscriber: new Redis(),
-      }),
-    };
+        subscriber: new Redis()
+      })
+    }
   }
 }
-
 ```
 
 In order to let `nestjs-query` know about the provider you can set the `pubSub` option.
 
 ```ts title="todo-item/todo-item.module.ts" {14}
-import { NestjsQueryGraphQLModule } from '@ptc-org/nestjs-query-graphql';
-import { NestjsQueryTypeOrmModule } from '@ptc-org/nestjs-query-typeorm';
-import { Module } from '@nestjs/common';
-import { TodoItemInputDTO } from './dto/todo-item-input.dto';
-import { TodoItemUpdateDTO } from './dto/todo-item-update.dto';
-import { TodoItemDTO } from './dto/todo-item.dto';
-import { TodoItemEntity } from './todo-item.entity';
-import { RedisPubSubProvider } from '../redis-pub-sub.provider';
+import { NestjsQueryGraphQLModule } from '@la-patate-du-coin/nestjs-query-graphql'
+import { NestjsQueryTypeOrmModule } from '@la-patate-du-coin/nestjs-query-typeorm'
+import { Module } from '@nestjs/common'
+import { TodoItemInputDTO } from './dto/todo-item-input.dto'
+import { TodoItemUpdateDTO } from './dto/todo-item-update.dto'
+import { TodoItemDTO } from './dto/todo-item.dto'
+import { TodoItemEntity } from './todo-item.entity'
+import { RedisPubSubProvider } from '../redis-pub-sub.provider'
 
 @Module({
   imports: [
@@ -247,11 +245,11 @@ import { RedisPubSubProvider } from '../redis-pub-sub.provider';
           EntityClass: TodoItemEntity,
           CreateDTOClass: TodoItemInputDTO,
           UpdateDTOClass: TodoItemUpdateDTO,
-          enableSubscriptions: true,
-        },
-      ],
-    }),
-  ],
+          enableSubscriptions: true
+        }
+      ]
+    })
+  ]
 })
 export class TodoItemModule {}
 ```

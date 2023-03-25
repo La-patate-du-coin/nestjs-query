@@ -1,40 +1,37 @@
-import React from 'react';
-import clsx from 'clsx';
-import Layout from '@theme/Layout';
-import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import styles from './styles.module.css';
+import React from 'react'
+import clsx from 'clsx'
+import Layout from '@theme/Layout'
+import Link from '@docusaurus/Link'
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
+import useBaseUrl from '@docusaurus/useBaseUrl'
+import styles from './styles.module.css'
 
 const features = [
   {
     title: <>GraphQL</>,
     imageUrl: 'img/graphql_logo.svg',
     description: (
-      <>
-        Easily create code first GraphQL CRUD resolvers, with out of the box filtering, paging, sorting, and mutations.
-      </>
-    ),
+      <>Easily create code first GraphQL CRUD resolvers, with out of the box filtering, paging, sorting, and mutations.</>
+    )
   },
   {
     title: <>NestJS</>,
     imageUrl: 'img/nestjs_logo.svg',
     description: (
       <>
-        Built on top of <code>nestjs</code>. Allowing you to hit the ground running without having to learn a whole new
-        framework.
+        Built on top of <code>nestjs</code>. Allowing you to hit the ground running without having to learn a whole new framework.
       </>
-    ),
+    )
   },
   {
     title: <>TypeScript</>,
     imageUrl: 'img/ts_logo.png',
-    description: <>Built with typescript from the ground up.</>,
-  },
-];
+    description: <>Built with typescript from the ground up.</>
+  }
+]
 
 function Feature({ imageUrl, title, description }) {
-  const imgUrl = useBaseUrl(imageUrl);
+  const imgUrl = useBaseUrl(imageUrl)
   return (
     <div className={clsx('col col--4', styles.feature)}>
       {imgUrl && (
@@ -45,17 +42,17 @@ function Feature({ imageUrl, title, description }) {
       <h3>{title}</h3>
       <p>{description}</p>
     </div>
-  );
+  )
 }
 
 function Home() {
-  const context = useDocusaurusContext();
-  const { siteConfig = {} } = context;
+  const context = useDocusaurusContext()
+  const { siteConfig = {} } = context
   return (
     <Layout title={`${siteConfig.title}`} description={`${siteConfig.tagline}`}>
       <header className={clsx('hero', styles.heroBanner)}>
         <div className="container">
-          <img alt="Nestjs-query" className={styles.heroLogo} src={useBaseUrl('img/logo.svg')} />
+          <img alt="NestJS-Query" className={styles.heroLogo} src={useBaseUrl('img/logo.svg')} />
           <h1 className="hero__title">{siteConfig.title}</h1>
           <p className="hero__subtitle">{siteConfig.tagline}</p>
           <div className={styles.buttons}>
@@ -82,7 +79,7 @@ function Home() {
         )}
       </main>
     </Layout>
-  );
+  )
 }
 
-export default Home;
+export default Home

@@ -1,5 +1,5 @@
+import { AggregateQuery, AggregateResponse, Filter } from '@la-patate-du-coin/nestjs-query-core'
 import { Query, Resolver } from '@nestjs/graphql'
-import { AggregateQuery, AggregateResponse, Filter } from '@ptc-org/nestjs-query-core'
 import { deepEqual, objectContaining, when } from 'ts-mockito'
 
 import { AggregateRelationsResolver } from '../../../src/resolvers/relations'

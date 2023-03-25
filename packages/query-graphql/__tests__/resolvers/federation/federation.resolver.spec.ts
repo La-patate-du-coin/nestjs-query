@@ -1,5 +1,4 @@
-import { ID, ObjectType, Query, Resolver } from '@nestjs/graphql'
-import { Class } from '@ptc-org/nestjs-query-core'
+import { Class } from '@la-patate-du-coin/nestjs-query-core'
 import {
   CursorConnection,
   CursorQueryArgsType,
@@ -9,7 +8,8 @@ import {
   OffsetQueryArgsType,
   Relation,
   UnPagedRelation
-} from '@ptc-org/nestjs-query-graphql'
+} from '@la-patate-du-coin/nestjs-query-graphql'
+import { ID, ObjectType, Query, Resolver } from '@nestjs/graphql'
 import { deepEqual, objectContaining, when } from 'ts-mockito'
 
 import { createResolverFromNest, generateSchema, TestRelationDTO, TestResolverDTO, TestService } from '../../__fixtures__'

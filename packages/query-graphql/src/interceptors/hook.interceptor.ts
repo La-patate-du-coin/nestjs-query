@@ -1,6 +1,6 @@
+import { Class } from '@la-patate-du-coin/nestjs-query-core'
 import { CallHandler, ExecutionContext, Inject, Injectable, NestInterceptor } from '@nestjs/common'
 import { GqlExecutionContext } from '@nestjs/graphql'
-import { Class } from '@ptc-org/nestjs-query-core'
 
 import { getHookForType } from '../decorators'
 import { getHookToken, Hook, HookTypes } from '../hooks'

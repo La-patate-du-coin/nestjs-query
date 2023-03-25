@@ -1,5 +1,5 @@
+import { Class } from '@la-patate-du-coin/nestjs-query-core'
 import { Complexity } from '@nestjs/graphql'
-import { Class } from '@ptc-org/nestjs-query-core'
 
 import { AuthorizerOptions } from '../../auth'
 import { DTONamesOpts } from '../../common'
@@ -71,7 +71,7 @@ export type ResolverRelation<Relation> = {
   /**
    * Set to true if you should be able to filter on this relation.
    *
-   * This will only work with relations defined through an ORM (typeorm or sequelize).
+   * This will only work with relations defined through an ORM (typeorm).
    */
   allowFiltering?: boolean
 

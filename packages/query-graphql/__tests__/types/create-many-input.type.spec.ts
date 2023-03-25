@@ -1,5 +1,5 @@
+import { CreateManyInputType } from '@la-patate-du-coin/nestjs-query-graphql'
 import { Args, Field, InputType, Int, Query, Resolver } from '@nestjs/graphql'
-import { CreateManyInputType } from '@ptc-org/nestjs-query-graphql'
 import { plainToClass } from 'class-transformer'
 import { MinLength, validateSync } from 'class-validator'
 

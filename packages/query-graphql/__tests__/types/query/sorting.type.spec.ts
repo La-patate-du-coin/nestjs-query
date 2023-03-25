@@ -1,6 +1,6 @@
 // eslint-disable-next-line max-classes-per-file
+import { FilterableField } from '@la-patate-du-coin/nestjs-query-graphql'
 import { Args, InputType, Int, ObjectType, Query, Resolver } from '@nestjs/graphql'
-import { FilterableField } from '@ptc-org/nestjs-query-graphql'
 
 import { getOrCreateSortType } from '../../../src/types/query/sorting.type'
 import { generateSchema } from '../../__fixtures__'

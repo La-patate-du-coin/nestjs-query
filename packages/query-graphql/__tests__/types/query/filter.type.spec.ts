@@ -1,17 +1,5 @@
 // eslint-disable-next-line max-classes-per-file
-import {
-  Args,
-  Field,
-  Float,
-  GraphQLTimestamp,
-  InputType,
-  Int,
-  ObjectType,
-  Query,
-  registerEnumType,
-  Resolver
-} from '@nestjs/graphql'
-import { Class, Filter } from '@ptc-org/nestjs-query-core'
+import { Class, Filter } from '@la-patate-du-coin/nestjs-query-core'
 import {
   CursorConnection,
   DeleteFilterType,
@@ -27,7 +15,19 @@ import {
   SubscriptionFilterType,
   UnPagedRelation,
   UpdateFilterType
-} from '@ptc-org/nestjs-query-graphql'
+} from '@la-patate-du-coin/nestjs-query-graphql'
+import {
+  Args,
+  Field,
+  Float,
+  GraphQLTimestamp,
+  InputType,
+  Int,
+  ObjectType,
+  Query,
+  registerEnumType,
+  Resolver
+} from '@nestjs/graphql'
 import { plainToClass } from 'class-transformer'
 
 import { generateSchema } from '../../__fixtures__'

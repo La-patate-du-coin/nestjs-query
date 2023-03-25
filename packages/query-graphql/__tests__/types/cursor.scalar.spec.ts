@@ -1,4 +1,4 @@
-import { ConnectionCursorScalar } from '@ptc-org/nestjs-query-graphql'
+import { ConnectionCursorScalar } from '@la-patate-du-coin/nestjs-query-graphql'
 import { Kind } from 'graphql'
 
 describe('ConnectionCursorScalar', (): void => {

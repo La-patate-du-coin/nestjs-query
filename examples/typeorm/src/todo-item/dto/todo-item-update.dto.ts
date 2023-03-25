@@ -1,5 +1,10 @@
+import {
+  BeforeUpdateMany,
+  BeforeUpdateOne,
+  UpdateManyInputType,
+  UpdateOneInputType
+} from '@la-patate-du-coin/nestjs-query-graphql'
 import { Field, InputType } from '@nestjs/graphql'
-import { BeforeUpdateMany, BeforeUpdateOne, UpdateManyInputType, UpdateOneInputType } from '@ptc-org/nestjs-query-graphql'
 import { IsBoolean, IsNumber, IsOptional, IsString, MaxLength } from 'class-validator'
 
 import { GqlContext } from '../../auth.guard'

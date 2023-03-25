@@ -1,5 +1,3 @@
-import { Inject, Provider } from '@nestjs/common'
-import { Resolver } from '@nestjs/graphql'
 import {
   Assembler,
   AssemblerFactory,
@@ -9,7 +7,9 @@ import {
   InjectAssemblerQueryService,
   InjectQueryService,
   QueryService
-} from '@ptc-org/nestjs-query-core'
+} from '@la-patate-du-coin/nestjs-query-core'
+import { Inject, Provider } from '@nestjs/common'
+import { Resolver } from '@nestjs/graphql'
 import { PubSub } from 'graphql-subscriptions'
 
 import { InjectPubSub } from '../decorators'

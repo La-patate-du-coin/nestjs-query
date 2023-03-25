@@ -1,5 +1,5 @@
+import { FilterableField, FilterableUnPagedRelation } from '@la-patate-du-coin/nestjs-query-graphql'
 import { GraphQLISODateTime, ID, ObjectType } from '@nestjs/graphql'
-import { FilterableField, FilterableUnPagedRelation } from '@ptc-org/nestjs-query-graphql'
 
 import { SubTaskDTO } from '../../sub-task/dto/sub-task.dto'
 import { SubTaskEntity } from '../../sub-task/sub-task.entity'

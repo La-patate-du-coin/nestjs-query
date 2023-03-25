@@ -1,3 +1,4 @@
+import { Class, FilterComparisonOperators, FilterFieldComparison, isNamed } from '@la-patate-du-coin/nestjs-query-core'
 import {
   Field,
   Float,
@@ -9,7 +10,6 @@ import {
   ReturnTypeFunc,
   ReturnTypeFuncValue
 } from '@nestjs/graphql'
-import { Class, FilterComparisonOperators, FilterFieldComparison, isNamed } from '@ptc-org/nestjs-query-core'
 import { Type } from 'class-transformer'
 import { IsBoolean, IsDate, IsOptional, ValidateNested } from 'class-validator'
 import { upperCaseFirst } from 'upper-case-first'

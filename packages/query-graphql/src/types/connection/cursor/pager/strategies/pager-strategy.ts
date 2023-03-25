@@ -1,4 +1,4 @@
-import { Query, SortField } from '@ptc-org/nestjs-query-core'
+import { Query, SortField } from '@la-patate-du-coin/nestjs-query-core'
 
 import { CursorPagingType } from '../../../../query'
 

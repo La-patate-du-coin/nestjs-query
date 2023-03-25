@@ -2,9 +2,10 @@
 title: Example
 sidebar_label: Example
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import useBaseUrl from '@docusaurus/useBaseUrl';
+
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+import useBaseUrl from '@docusaurus/useBaseUrl'
 
 Let's create a simple todo-item graphql example.
 
@@ -24,6 +25,7 @@ Be sure to install the correct ORM package!
 :::
 
 Install extra dependencies for the example.
+
 ```sh
 npm i pg apollo-server-express
 ```
@@ -53,144 +55,29 @@ Add the following to `src/todo-item/todo-item.entity.ts`.
   groupId="orm"
   values={[
     { label: 'TypeOrm', value: 'typeorm', },
-    { label: 'Sequelize', value: 'sequelize', },
-    { label: 'Mongoose', value: 'mongoose', },
-    { label: 'Typegoose', value: 'typegoose', },
   ]
 }>
 <TabItem value="typeorm">
 
 ```ts title="todo-item/todo-item.entity.ts"
-import {
-  Column,
-  CreateDateColumn,
-  Entity,
-  PrimaryGeneratedColumn,
-  UpdateDateColumn,
-} from 'typeorm';
+import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm'
 
 @Entity()
 export class TodoItemEntity {
   @PrimaryGeneratedColumn()
-  id!: string;
+  id!: string
 
   @Column()
-  title!: string;
+  title!: string
 
   @Column()
-  completed!: boolean;
+  completed!: boolean
 
   @CreateDateColumn()
-  created!: Date;
+  created!: Date
 
   @UpdateDateColumn()
-  updated!: Date;
-}
-```
-
-</TabItem>
-<TabItem value="sequelize">
-
-```ts title="todo-item/todo-item.entity.ts"
-import {
-  Table,
-  Column,
-  Model,
-  CreatedAt,
-  UpdatedAt,
-  PrimaryKey,
-  AutoIncrement,
-} from 'sequelize-typescript';
-
-@Table
-export class TodoItemEntity extends Model<TodoItemEntity, Partial<TodoItemEntity>> {
-  @PrimaryKey
-  @AutoIncrement
-  @Column
-  id!: number;
-
-  @Column
-  title!: string;
-
-  @Column
-  completed!: boolean;
-
-  @CreatedAt
-  created!: Date;
-
-  @UpdatedAt
-  updated!: Date;
-}
-
-```
-
-</TabItem>
-<TabItem value="mongoose">
-
-```ts title="todo-item/todo-item.entity.ts"
-import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document } from 'mongoose';
-
-@Schema({ timestamps: { createdAt: 'created', updatedAt: 'updated' } })
-export class TodoItemEntity extends Document {
-  @Prop({ required: true })
-  title!: string;
-
-  @Prop()
-  description?: string;
-
-  @Prop({ required: true })
-  completed!: boolean;
-
-  @Prop({ default: Date.now })
-  created!: Date;
-
-  @Prop({ default: Date.now })
-  updated!: Date;
-}
-
-export const TodoItemEntitySchema = SchemaFactory.createForClass(TodoItemEntity);
-
-```
-
-</TabItem>
-<TabItem value="typegoose">
-
-```ts title="todo-item/todo-item.entity.ts"
-import { ObjectId } from '@ptc-org/nestjs-query-graphql'
-import { Base } from '@typegoose/typegoose/lib/defaultClasses';
-import { Prop, modelOptions, Ref } from '@typegoose/typegoose';
-import { Types } from 'mongoose';
-import { SubTaskEntity } from '../sub-task/sub-task.entity';
-import { TagEntity } from '../tag/tag.entity';
-
-@modelOptions({
-  schemaOptions: {
-    timestamps: { createdAt: 'created', updatedAt: 'updated' },
-    collection: 'todo-items',
-    toObject: { virtuals: true },
-  },
-})
-export class TodoItemEntity implements Base {
-  @ObjectId()
-  _id!: Types.ObjectId
-
-  id!: string  
-
-  @Prop({ required: true })
-  title!: string;
-
-  @Prop()
-  description?: string;
-
-  @Prop({ required: true })
-  completed!: boolean;
-
-  @Prop({ default: Date.now })
-  created!: Date;
-
-  @Prop({ default: Date.now })
-  updated!: Date;
+  updated!: Date
 }
 ```
 
@@ -203,14 +90,15 @@ The DTO (Data Transfer Object) is used by the resolver to represent incoming req
 
 The DTO is where you can:
 
-* Define fields that should be rendered by graphql.
-* Define fields that should be filterable using the `@FilterableField` decorator.
-* Define validation that will be used by mutations.
+- Define fields that should be rendered by graphql.
+- Define fields that should be filterable using the `@FilterableField` decorator.
+- Define validation that will be used by mutations.
 
 In this example the DTO and entity are two different classes to clearly demonstrate what is required for `graphql` vs
 the persistence layer. However, you can combine the two into a single class.
 
 From the root of your project run:
+
 ```sh
 npx nest g cl todo-item.dto todo-item --flat
 ```
@@ -218,36 +106,34 @@ npx nest g cl todo-item.dto todo-item --flat
 Now lets fill out the DTO. Add the following to `src/todo-item/todo-item.dto.ts`.
 
 ```ts title="todo-item/todo-item.dto.ts"
-import { FilterableField, IDField } from '@ptc-org/nestjs-query-graphql';
-import { ObjectType, GraphQLISODateTime, Field, ID } from '@nestjs/graphql';
+import { FilterableField, IDField } from '@la-patate-du-coin/nestjs-query-graphql'
+import { ObjectType, GraphQLISODateTime, Field, ID } from '@nestjs/graphql'
 
 @ObjectType('TodoItem')
 export class TodoItemDTO {
   @IDField(() => ID)
-  id!: number;
+  id!: number
 
   @FilterableField()
-  title!: string;
+  title!: string
 
   @FilterableField()
-  completed!: boolean;
+  completed!: boolean
 
   @Field(() => GraphQLISODateTime)
-  created!: Date;
+  created!: Date
 
   @Field(() => GraphQLISODateTime)
-  updated!: Date;
+  updated!: Date
 }
-
-
 ```
 
-Notice the use of `@FilterableField` this will let `@ptc-org/nestjs-query-graphql` know to allow filtering on the
+Notice the use of `@FilterableField` this will let `@la-patate-du-coin/nestjs-query-graphql` know to allow filtering on the
 corresponding field. If you just use `@Field` then you will not be able to filter on the corresponding field.
 
 ## Create the create DTO class.
 
-From the previously created DTO, `@ptc-org/nestjs-query-graphql` will automatically create a `CreateTodoItem` graphql type:
+From the previously created DTO, `@la-patate-du-coin/nestjs-query-graphql` will automatically create a `CreateTodoItem` graphql type:
 
 ```graphql
 input CreateTodoItem {
@@ -268,22 +154,20 @@ fields, we can create a custom create DTO:
 npx nest g cl todo-item.create.dto todo-item --flat
 ```
 
-
 ```ts title="todo-item/todo-item.create.dto.ts"
-import { IsBoolean, IsString } from 'class-validator';
+import { IsBoolean, IsString } from 'class-validator'
 
 @InputType('CreateTodoItem')
 export class TodoItemCreateDTO {
   @IsString()
   @Field()
-  title!: string;
+  title!: string
 
   @IsBoolean()
   @Field()
-  completed!: boolean;
+  completed!: boolean
 }
 ```
-
 
 ## Wire everything up.
 
@@ -293,33 +177,30 @@ The `NestjsQueryGraphQLModule` will automatically create a Resolver that will ex
 
 **Queries**
 
-* `todoItems` - find multiple `TodoItem`s.
-* `todoItem` - find one `TodoItem`.
+- `todoItems` - find multiple `TodoItem`s.
+- `todoItem` - find one `TodoItem`.
 
 **Mutations**
 
-* `createManyTodoItems` - create multiple `TodoItem`s.
-* `createOneTodoItems` - create one `TodoItem`.
-* `updateManyTodoItems` - update multiple `TodoItems`.
-* `updateOneTodoItems` - update one `TodoItem`.
-* `deleteManyTodoItems` - delete multiple `TodoItems`s.
-* `deleteOneTodoItems` - delete one `TodoItem`.
+- `createManyTodoItems` - create multiple `TodoItem`s.
+- `createOneTodoItems` - create one `TodoItem`.
+- `updateManyTodoItems` - update multiple `TodoItems`.
+- `updateOneTodoItems` - update one `TodoItem`.
+- `deleteManyTodoItems` - delete multiple `TodoItems`s.
+- `deleteOneTodoItems` - delete one `TodoItem`.
 
 <Tabs
   defaultValue="typeorm"
   groupId="orm"
   values={[
     { label: 'TypeOrm', value: 'typeorm', },
-    { label: 'Sequelize', value: 'sequelize', },
-    { label: 'Mongoose', value: 'mongoose', },
-    { label: 'Typegoose', value: 'typegoose', },
   ]
 }>
 <TabItem value="typeorm">
 
 ```ts {10-22}
-import { NestjsQueryGraphQLModule } from '@ptc-org/nestjs-query-graphql';
-import { NestjsQueryTypeOrmModule } from '@ptc-org/nestjs-query-typeorm';
+import { NestjsQueryGraphQLModule } from '@la-patate-du-coin/nestjs-query-graphql';
+import { NestjsQueryTypeOrmModule } from '@la-patate-du-coin/nestjs-query-typeorm';
 import { Module } from '@nestjs/common';
 import { TodoItemCreateDTO } from './todo-item.create.dto';
 import { TodoItemDTO } from './todo-item.dto';
@@ -346,106 +227,27 @@ export class TodoItemModule {}
 ```
 
 </TabItem>
-<TabItem value="sequelize">
-
-```ts {9-15}
-import { NestjsQueryGraphQLModule } from '@ptc-org/nestjs-query-graphql';
-import { NestjsQuerySequelizeModule } from '@ptc-org/nestjs-query-sequelize';
-import { Module } from '@nestjs/common';
-import { TodoItemDTO } from './todo-item.dto';
-import { TodoItemEntity } from './todo-item.entity';
-
-@Module({
-  imports: [
-    NestjsQueryGraphQLModule.forFeature({
-      // import the NestjsQuerySequelizeModule to register the entity with sequelize
-      // and provide a QueryService
-      imports: [NestjsQuerySequelizeModule.forFeature([TodoItemEntity])],
-      // describe the resolvers you want to expose
-      resolvers: [{ DTOClass: TodoItemDTO, EntityClass: TodoItemEntity }],
-    }),
-  ],
-})
-export class TodoItemModule {}
-```
-
-</TabItem>
-<TabItem value="mongoose">
-
-```ts {9-19}
-import { NestjsQueryGraphQLModule } from '@ptc-org/nestjs-query-graphql';
-import { NestjsQueryMongooseModule } from '@ptc-org/nestjs-query-mongoose';
-import { Module } from '@nestjs/common';
-import { TodoItemDTO } from './todo-item.dto';
-import { TodoItemEntity, TodoItemEntitySchema } from './todo-item.entity';
-
-@Module({
-  imports: [
-    NestjsQueryGraphQLModule.forFeature({
-      // import the NestjsQueryMongooseModule to register the entity with mongoose
-      // and provide a QueryService
-      imports: [
-        NestjsQueryMongooseModule.forFeature([
-          { document: TodoItemEntity, name: TodoItemEntity.name, schema: TodoItemEntitySchema },
-        ]),
-      ],
-      // describe the resolvers you want to expose
-      resolvers: [{ DTOClass: TodoItemDTO, EntityClass: TodoItemEntity }],
-    }),
-  ],
-})
-export class TodoItemModule {}
-```
-
-</TabItem>
-<TabItem value="typegoose">
-
-```ts {9-19}
-import { NestjsQueryGraphQLModule } from '@ptc-org/nestjs-query-graphql';
-import { Module } from '@nestjs/common';
-import { NestjsQueryTypegooseModule } from '@ptc-org/nestjs-query-typegoose';
-import { TodoItemDTO } from './dto/todo-item.dto';
-import { TodoItemEntity } from './todo-item.entity';
-
-const guards = [AuthGuard];
-@Module({
-  providers: [TodoItemResolver],
-  imports: [
-    NestjsQueryGraphQLModule.forFeature({
-      imports: [NestjsQueryTypegooseModule.forFeature([TodoItemEntity])],
-      resolvers: [{ DTOClass: TodoItemDTO, EntityClass: TodoItemEntity }],
-    }),
-  ],
-})
-export class TodoItemModule {}
-```
-
-</TabItem>
 </Tabs>
 
 Next update `app.module` to set up your db connection and the `graphql` nest modules.
-
 
 <Tabs
   defaultValue="typeorm"
   groupId="orm"
   values={[
     { label: 'TypeOrm', value: 'typeorm', },
-    { label: 'Sequelize', value: 'sequelize', },
-    { label: 'Mongoose', value: 'mongoose', },
-    { label: 'Typegoose', value: 'typegoose', },
   ]
 }>
 <TabItem value="typeorm">
 
 ```ts
-import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
-import { Module } from '@nestjs/common';
-import { GraphQLModule } from '@nestjs/graphql';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { TodoItemModule } from './todo-item/todo-item.module';
+import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo'
+import { Module } from '@nestjs/common'
+import { GraphQLModule } from '@nestjs/graphql'
+import { TypeOrmModule } from '@nestjs/typeorm'
+import { AppController } from './app.controller'
+import { AppService } from './app.service'
+import { TodoItemModule } from './todo-item/todo-item.module'
 
 @Module({
   imports: [
@@ -455,114 +257,20 @@ import { TodoItemModule } from './todo-item/todo-item.module';
       username: 'gettingstarted',
       autoLoadEntities: true,
       synchronize: true,
-      logging: true,
+      logging: true
     }),
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       // set to true to automatically generate schema
-      autoSchemaFile: true,
+      autoSchemaFile: true
     }),
-    TodoItemModule,
+    TodoItemModule
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService]
 })
 export class AppModule {}
 ```
-
-</TabItem>
-<TabItem value="sequelize">
-
-```ts
-import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
-import { Module } from '@nestjs/common';
-import { GraphQLModule } from '@nestjs/graphql';
-import { SequelizeModule } from '@nestjs/sequelize';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { TodoItemModule } from './todo-item/todo-item.module';
-
-@Module({
-  imports: [
-    TodoItemModule,
-    SequelizeModule.forRoot({
-      dialect: 'postgres',
-      database: 'gettingstarted',
-      username: 'gettingstarted',
-      autoLoadModels: true,
-      synchronize: true,
-      logging: true,
-    }),
-    GraphQLModule.forRoot<ApolloDriverConfig>({
-      driver: ApolloDriver,
-      // set to true to automatically generate schema
-      autoSchemaFile: true,
-    }),
-  ],
-  controllers: [AppController],
-  providers: [AppService],
-})
-export class AppModule {}
-
-
-```
-
-</TabItem>
-<TabItem value="mongoose">
-
-```ts
-import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
-import { Module } from '@nestjs/common';
-import { GraphQLModule } from '@nestjs/graphql';
-import { MongooseModule } from '@nestjs/mongoose';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { TodoItemModule } from './todo-item/todo-item.module';
-
-@Module({
-  imports: [
-    MongooseModule.forRoot('mongodb://localhost/nest', options),
-    GraphQLModule.forRoot<ApolloDriverConfig>({
-      driver: ApolloDriver,
-      // set to true to automatically generate schema
-      autoSchemaFile: true,
-    }),
-    TodoItemModule,
-  ],
-  controllers: [AppController],
-  providers: [AppService],
-})
-export class AppModule {}
-
-
-```
-
-</TabItem>
-<TabItem value="typegoose">
-
-```ts
-import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
-import { Module } from '@nestjs/common';
-import { GraphQLModule } from '@nestjs/graphql';
-import { TypegooseModule } from '@m8a/nestjs-typegoose';
-import { TodoItemModule } from './todo-item/todo-item.module';
-
-@Module({
-  imports: [
-    TypegooseModule.forRoot('mongodb://localhost/nest', options),
-    GraphQLModule.forRoot<ApolloDriverConfig>({
-      driver: ApolloDriver,
-      // set to true to automatically generate schema
-      autoSchemaFile: true,
-    }),
-    TodoItemModule,
-  ],
-})
-export class AppModule {}
-
-
-```
-**NOTE** For the sake of brevity, the `options` object in the Mongoose and Typegoose examples aren't defined. If you'd like to see full examples of all of the persistence services, please refer to the `./examples` directory in the [source code](https://github.com/tripss/nestjs-query/tree/master/examples).
 
 </TabItem>
 </Tabs>
@@ -582,17 +290,6 @@ services:
       - "5432"
     ports:
       - "5432:5432"
-  # only needed if using mongoose
-  mongo:
-    image: "mongo:4.4"
-    restart: always
-    ports:
-      - "27017:27017"
-  mongo-express:
-    image: "mongo-express:latest"
-    restart: always
-    ports:
-      - 8081:8081
 
 
 ```
@@ -600,6 +297,7 @@ services:
 ## Running the Example
 
 Start the backing services
+
 ```sh
 docker-compose up -d
 ```
@@ -629,9 +327,7 @@ Visit http://localhost:3000/graphql where you should see the playground
 
 ```graphql
 mutation {
-  createOneTodoItem(
-    input: { todoItem: { title: "Create One Todo Item", completed: false } }
-  ) {
+  createOneTodoItem(input: { todoItem: { title: "Create One Todo Item", completed: false } }) {
     id
     title
     completed
@@ -756,10 +452,8 @@ mutation {
 }
 ```
 
-
 </TabItem>
 <TabItem value="response">
-
 
 ```json
 {
@@ -906,7 +600,6 @@ mutation {
 </TabItem>
 <TabItem value="response">
 
-
 ```json
 {
   "data": {
@@ -924,10 +617,10 @@ mutation {
 </TabItem>
 </Tabs>
 
-
 ### Update a TodoItem
 
 Lets update the completed `TodoItem` we created earlier to not be completed.
+
 <Tabs
   defaultValue="graphql"
   values={[
@@ -972,6 +665,7 @@ mutation {
 ### Update Multiple TodoItems
 
 Lets update the completed `TodoItem` we created earlier to not be completed.
+
 <Tabs
   defaultValue="graphql"
   values={[
@@ -983,13 +677,10 @@ Lets update the completed `TodoItem` we created earlier to not be completed.
 
 ```graphql
 mutation {
-  updateManyTodoItems(
-    input: { filter: { id: { in: [1, 2] } }, update: { completed: true } }
-  ) {
+  updateManyTodoItems(input: { filter: { id: { in: [1, 2] } }, update: { completed: true } }) {
     updatedCount
   }
 }
-
 ```
 
 </TabItem>
@@ -1010,10 +701,10 @@ mutation {
 
 You can check this by running the completed query from above.
 
-
 ### Delete One TodoItem
 
 Lets update delete the first `TodoItem`.
+
 <Tabs
   defaultValue="graphql"
   values={[
@@ -1070,9 +761,7 @@ Lets update delete the create many todo items `TodoItem` using a filter.
 
 ```graphql
 mutation {
-  deleteManyTodoItems(
-    input: { filter: { title: { like: "Create Many Todo Items%" } } }
-  ) {
+  deleteManyTodoItems(input: { filter: { title: { like: "Create Many Todo Items%" } } }) {
     deletedCount
   }
 }
@@ -1093,4 +782,3 @@ mutation {
 
 </TabItem>
 </Tabs>
-

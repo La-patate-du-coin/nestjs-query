@@ -1,6 +1,6 @@
+import { Class, MapReflector, Query } from '@la-patate-du-coin/nestjs-query-core'
 import { NotImplementedException } from '@nestjs/common'
 import { Field, Int, ObjectType } from '@nestjs/graphql'
-import { Class, MapReflector, Query } from '@ptc-org/nestjs-query-core'
 
 import { getGraphqlObjectName } from '../../../common'
 import { SkipIf } from '../../../decorators'

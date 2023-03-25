@@ -1,5 +1,5 @@
+import { Class, MetaValue, ValueReflector } from '@la-patate-du-coin/nestjs-query-core'
 import { Field, FieldOptions, ReturnTypeFunc } from '@nestjs/graphql'
-import { Class, MetaValue, ValueReflector } from '@ptc-org/nestjs-query-core'
 
 import { ID_FIELD_KEY } from './constants'
 import { FilterableField, FilterableFieldOptions } from './filterable-field.decorator'
@@ -23,7 +23,7 @@ export interface IDFieldDescriptor {
  * In the following DTO `id`, `title` and `completed` are filterable.
  *
  * ```ts
- * import { IDField } from '@ptc-org/nestjs-query-graphql';
+ * import { IDField } from '@la-patate-du-coin/nestjs-query-graphql';
  * import { ObjectType, ID } from '@nestjs/graphql';
  *
  * @ObjectType('TodoItem')

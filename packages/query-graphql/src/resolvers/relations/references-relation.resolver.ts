@@ -1,5 +1,5 @@
+import { Class, QueryService } from '@la-patate-du-coin/nestjs-query-core'
 import { Parent, Resolver } from '@nestjs/graphql'
-import { Class, QueryService } from '@ptc-org/nestjs-query-core'
 
 import { getDTONames } from '../../common'
 import { ResolverField } from '../../decorators'

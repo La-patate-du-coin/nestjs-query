@@ -1,6 +1,6 @@
+import { AggregateQuery } from '@la-patate-du-coin/nestjs-query-core'
 import { createParamDecorator, ExecutionContext } from '@nestjs/common'
 import { GqlExecutionContext } from '@nestjs/graphql'
-import { AggregateQuery } from '@ptc-org/nestjs-query-core'
 import { GraphQLResolveInfo } from 'graphql'
 
 import { QueryResolveTree, simplifyResolveInfo } from './graphql-resolve-info.utils'

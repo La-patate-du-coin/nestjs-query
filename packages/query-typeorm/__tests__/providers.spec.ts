@@ -1,5 +1,5 @@
+import { getQueryServiceToken } from '@la-patate-du-coin/nestjs-query-core'
 import { getRepositoryToken } from '@nestjs/typeorm'
-import { getQueryServiceToken } from '@ptc-org/nestjs-query-core'
 import { instance, mock } from 'ts-mockito'
 import { Repository } from 'typeorm'
 

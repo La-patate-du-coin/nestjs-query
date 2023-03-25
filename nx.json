@@ -1,67 +1,27 @@
 {
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "extends": "nx/presets/npm.json",
-  "npmScope": "ptc-org",
-  "tasksRunnerOptions": {
-    "default": {
-      "runner": "@nrwl/nx-cloud",
-      "options": {
-        "cacheableOperations": ["build", "test", "lint", "package", "prepare"],
-        "accessToken": "YWExNTY0MWYtYWMzNy00ZWZkLWIzMWEtMGYzYWY4YWRmMDE1fHJlYWQtd3JpdGU="
-      }
-    }
-  },
+  "npmScope": "la-patate-du-coin",
   "workspaceLayout": {
     "libsDir": "packages",
     "appsDir": ""
   },
-  "targetDependencies": {
-    "build": [
-      {
-        "target": "build",
-        "projects": "dependencies"
-      }
-    ],
-    "prepare": [
-      {
-        "target": "prepare",
-        "projects": "dependencies"
-      }
-    ],
-    "package": [
-      {
-        "target": "package",
-        "projects": "dependencies"
-      }
-    ]
-  },
   "affected": {
     "defaultBase": "master"
-  },
-  "pluginsConfig": {
-    "@nrwl/js": {
-      "analyzeSourceFiles": false
-    }
   },
   "cli": {
     "defaultCollection": "@nrwl/node"
   },
   "defaultProject": "examples",
-  "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "targetDefaults": {
     "build": {
       "dependsOn": ["^build"]
     },
-    "prepare": {
-      "dependsOn": ["^prepare"]
-    },
-    "package": {
-      "dependsOn": ["^package"]
-    },
     "test": {
-      "inputs": ["default", "^default", "{workspaceRoot}/jest.preset.js"]
+      "inputs": ["default", "^default", "{workspaceRoot}/jest.preset.ts"]
     },
     "e2e": {
-      "inputs": ["default", "^default", "{workspaceRoot}/jest.preset.js"]
+      "inputs": ["default", "^default", "{workspaceRoot}/jest.preset.ts"]
     },
     "lint": {
       "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]

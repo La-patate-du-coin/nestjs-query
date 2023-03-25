@@ -1,15 +1,14 @@
-/* eslint-disable */
-export default {
+module.exports = {
   displayName: 'examples',
-  preset: './jest.preset.js',
-  globals: {
-    'ts-jest': {
-      tsconfig: process.cwd() + '/examples/tsconfig.spec.json'
-    }
-  },
+  preset: './jest.preset.ts',
   testEnvironment: 'node',
   transform: {
-    '^.+\\.[tj]s$': 'ts-jest'
+    '^.+\\.[tj]sx?$': [
+      'ts-jest',
+      {
+        tsconfig: '<rootDir>/tsconfig.spec.json'
+      }
+    ]
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
   testMatch: ['**/examples/**/e2e/**/*.spec.ts'],

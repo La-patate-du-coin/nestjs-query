@@ -1,5 +1,5 @@
+import { Class, NoOpQueryService, QueryService } from '@la-patate-du-coin/nestjs-query-core'
 import { ObjectType } from '@nestjs/graphql'
-import { Class, NoOpQueryService, QueryService } from '@ptc-org/nestjs-query-core'
 
 import { FilterableField } from '../src/decorators'
 import { createResolvers } from '../src/providers'

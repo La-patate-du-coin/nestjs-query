@@ -1,5 +1,5 @@
+import { Class, SortDirection, SortField, SortNulls, ValueReflector } from '@la-patate-du-coin/nestjs-query-core'
 import { Field, InputType, registerEnumType } from '@nestjs/graphql'
-import { Class, SortDirection, SortField, SortNulls, ValueReflector } from '@ptc-org/nestjs-query-core'
 import { IsEnum, IsIn } from 'class-validator'
 
 import { getGraphqlObjectName } from '../../common'

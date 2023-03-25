@@ -1,5 +1,5 @@
+import { Class, Filter, mergeQuery, QueryService, SelectRelation } from '@la-patate-du-coin/nestjs-query-core'
 import { ArgsType, Resolver } from '@nestjs/graphql'
-import { Class, Filter, mergeQuery, QueryService, SelectRelation } from '@ptc-org/nestjs-query-core'
 import omit from 'lodash.omit'
 
 import { OperationGroup } from '../auth'

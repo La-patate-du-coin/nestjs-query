@@ -1,5 +1,10 @@
+import {
+  BeforeCreateMany,
+  BeforeCreateOne,
+  CreateManyInputType,
+  CreateOneInputType
+} from '@la-patate-du-coin/nestjs-query-graphql'
 import { Field, ID, InputType } from '@nestjs/graphql'
-import { BeforeCreateMany, BeforeCreateOne, CreateManyInputType, CreateOneInputType } from '@ptc-org/nestjs-query-graphql'
 import { IsBoolean, IsNotEmpty, IsOptional, IsString } from 'class-validator'
 
 import { GqlContext } from '../../auth.guard'
