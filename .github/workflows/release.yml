@@ -31,6 +31,3 @@ jobs:
         run: yarn nx version --configuration=release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-
-      - name: Push git changes
-        run: git push --follow-tags
