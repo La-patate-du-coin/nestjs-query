@@ -20,7 +20,7 @@ jobs:
           node_version: 16
 
       - name: Build
-        run: yarn nx build
+        run: yarn nx run-many --target=build --projects=query-*
 
       - name: Release
         run: yarn nx version:release
