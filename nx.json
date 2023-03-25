@@ -1,52 +1,21 @@
 {
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "extends": "nx/presets/npm.json",
   "npmScope": "la-patate-du-coin",
   "workspaceLayout": {
     "libsDir": "packages",
     "appsDir": ""
   },
-  "targetDependencies": {
-    "build": [
-      {
-        "target": "build",
-        "projects": "dependencies"
-      }
-    ],
-    "prepare": [
-      {
-        "target": "prepare",
-        "projects": "dependencies"
-      }
-    ],
-    "package": [
-      {
-        "target": "package",
-        "projects": "dependencies"
-      }
-    ]
-  },
   "affected": {
     "defaultBase": "master"
-  },
-  "pluginsConfig": {
-    "@nrwl/js": {
-      "analyzeSourceFiles": false
-    }
   },
   "cli": {
     "defaultCollection": "@nrwl/node"
   },
   "defaultProject": "examples",
-  "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "targetDefaults": {
     "build": {
       "dependsOn": ["^build"]
-    },
-    "prepare": {
-      "dependsOn": ["^prepare"]
-    },
-    "package": {
-      "dependsOn": ["^package"]
     },
     "test": {
       "inputs": ["default", "^default", "{workspaceRoot}/jest.preset.js"]
