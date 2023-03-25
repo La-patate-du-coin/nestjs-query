@@ -1,6 +1,6 @@
 {
-  "name": "query-graphql",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "query-graphql",
   "sourceRoot": "packages/query-graphql/src",
   "projectType": "library",
   "targets": {

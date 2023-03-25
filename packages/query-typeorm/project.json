@@ -1,6 +1,6 @@
 {
-  "name": "query-typeorm",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "query-typeorm",
   "sourceRoot": "packages/query-typeorm/src",
   "projectType": "library",
   "targets": {

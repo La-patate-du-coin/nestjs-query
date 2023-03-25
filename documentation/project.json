@@ -1,13 +1,13 @@
 {
-  "name": "documentation",
   "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "name": "documentation",
   "projectType": "application",
   "sourceRoot": "/documentation/src",
   "targets": {
     "build": {
       "executor": "@nx-plus/docusaurus:browser",
       "options": {
-        "outputPath": "dist//documentation"
+        "outputPath": "dist/documentation"
       }
     },
     "serve": {
