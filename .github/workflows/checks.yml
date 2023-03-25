@@ -81,11 +81,10 @@ jobs:
         run: yarn nx affected:test
 
       - name: Codecov
-        uses: codecov/codecov-action@v2
+        uses: codecov/codecov-action@v3
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           directory: ./coverage
-          fail_ci_if_error: false
           name: run-test-${{ matrix.node_version }}
 
   e2e:
@@ -114,9 +113,8 @@ jobs:
           NESTJS_QUERY_DB_TYPE: ${{ matrix.db_type }}
 
       - name: Codecov
-        uses: codecov/codecov-action@v2
+        uses: codecov/codecov-action@v3
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           directory: ./coverage
-          fail_ci_if_error: false
           name: run-e2e-${{ matrix.node_version }}
