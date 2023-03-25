@@ -1,3 +1,8 @@
+ 
+## [2.3.1](https://github.com/La-patate-du-coin/nestjs-query/compare/v2.3.0...v2.3.1) (2023-03-25)
+
+
+
 # [2.3.0](https://github.com/La-patate-du-coin/nestjs-query/compare/v2.2.0...v2.3.0) (2023-03-23)
 
 ### Bug Fixes
