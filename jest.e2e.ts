@@ -1,7 +1,6 @@
-/* eslint-disable */
-export default {
+module.exports = {
   displayName: 'examples',
-  preset: './jest.preset.js',
+  preset: './jest.preset.ts',
   testEnvironment: 'node',
   transform: {
     '^.+\\.[tj]sx?$': [

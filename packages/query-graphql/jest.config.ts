@@ -1,8 +1,6 @@
-/* eslint-disable */
-// eslint-disable-next-line import/no-default-export
-export default {
+module.exports = {
   displayName: 'query-graphql',
-  preset: '../../jest.preset.js',
+  preset: '../../jest.preset.ts',
   testEnvironment: 'node',
   transform: {
     '^.+\\.[tj]sx?$': [
