@@ -15890,6 +15890,7 @@ __metadata:
     jest-extended: 3.2.4
     jest-snapshot-serializer-raw: 1.2.0
     mysql2: 3.2.0
+    ngx-deploy-npm: ^5.2.0
     nx: 15.8.8
     passport: 0.6.0
     passport-jwt: 4.0.1
@@ -15918,6 +15919,17 @@ __metadata:
     typescript: 4.9.4
   languageName: unknown
   linkType: soft
+
+"ngx-deploy-npm@npm:^5.2.0":
+  version: 5.2.0
+  resolution: "ngx-deploy-npm@npm:5.2.0"
+  peerDependencies:
+    "@nrwl/devkit": ^14.0.0 || ^15.0.0
+    "@nrwl/workspace": ^14.0.0 || ^15.0.0
+    nx: ^14.0.0 || ^15.0.0
+  checksum: 4fffb7a49529c83ce7e92e5b850075bde54991e2ef7564d28dc9963feb7b990c11249e806e187b77f38b0c62ccd66539f69b17677bd5ce3876d2fd18df9d2351
+  languageName: node
+  linkType: hard
 
 "no-case@npm:^3.0.4":
   version: 3.0.4
