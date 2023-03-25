@@ -6,9 +6,7 @@
     "packages/**"
   ],
   "scripts": {
-    "docker": "docker-compose -f ./examples/docker-compose.yml",
-    "prepare": "husky install",
-    "test:e2e": "nx e2e examples"
+    "prepare": "husky install"
   },
   "dependencies": {
     "@apollo/federation": "0.38.1",
