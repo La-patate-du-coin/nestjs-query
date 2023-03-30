@@ -4372,6 +4372,7 @@ __metadata:
     "@nestjs/core": ^9.3.12
     "@nestjs/graphql": ^10.2.0
     "@nestjs/testing": ^9.3.12
+    "@types/lodash.omit": ^4.5.7
     dataloader: ^2.2.2
     graphql-fields: ^2.0.3
     lodash.omit: ^4.5.0
@@ -4400,6 +4401,9 @@ __metadata:
     "@nestjs/core": ^9.3.12
     "@nestjs/testing": ^9.3.12
     "@nestjs/typeorm": 8.0.4
+    "@types/lodash.filter": ^4.6.7
+    "@types/lodash.merge": ^4.6.7
+    "@types/lodash.omit": ^4.5.7
     camel-case: ^4.1.2
     lodash.filter: ^4.6.0
     lodash.merge: ^4.6.2
@@ -5912,6 +5916,40 @@ __metadata:
   dependencies:
     "@types/node": "*"
   checksum: e009a2bfb50e90ca9b7c6e8f648f8464067271fd99116f881073fa6fa76dc8d0133181dd65e6614d5fb1220d671d67b0124aef7d97dc02d7e342ab143a47779d
+  languageName: node
+  linkType: hard
+
+"@types/lodash.filter@npm:^4.6.7":
+  version: 4.6.7
+  resolution: "@types/lodash.filter@npm:4.6.7"
+  dependencies:
+    "@types/lodash": "*"
+  checksum: 32fbdd75c2cbc9a6bca318ba6c3e2bf6672d2f3678a568e9c76bd951224e569532d005f99e9b712c396acdd8228aff0e31af959a029a3091370ca9b3c6af36df
+  languageName: node
+  linkType: hard
+
+"@types/lodash.merge@npm:^4.6.7":
+  version: 4.6.7
+  resolution: "@types/lodash.merge@npm:4.6.7"
+  dependencies:
+    "@types/lodash": "*"
+  checksum: 94cd6fb8e606756a28f45d63c658aacfbce11a151f7fa322c4a3e87aa50d8bf26e0ae8cba0250070a7c5a6792fc51f79abf4c648bbb1850692be386cd76cd0ca
+  languageName: node
+  linkType: hard
+
+"@types/lodash.omit@npm:^4.5.7":
+  version: 4.5.7
+  resolution: "@types/lodash.omit@npm:4.5.7"
+  dependencies:
+    "@types/lodash": "*"
+  checksum: e30600de518e648f4e9590d9238506ceab561726ec2fe56b4ff29b17aa1e47cbf9188be259b7d606dfb2040998c778533ccc0c58f065cca44ab5a6dbc8b6e518
+  languageName: node
+  linkType: hard
+
+"@types/lodash@npm:*":
+  version: 4.14.192
+  resolution: "@types/lodash@npm:4.14.192"
+  checksum: 31e1f0543a04158d2c429c45efd7c77882736630d0652f82eb337d6159ec0c249c5d175c0af731537b53271e665ff8d76f43221d75d03646d31cb4bd6f0056b1
   languageName: node
   linkType: hard
 
