@@ -38,13 +38,13 @@
     "typeorm-seeding": "^1.6.1"
   },
   "devDependencies": {
-    "@nestjs/cli": "9.3.0",
-    "@nestjs/schematics": "9.0.4",
-    "@nestjs/testing": "9.3.12",
-    "supertest": "6.3.3",
-    "ts-loader": "9.4.2",
-    "ts-mockito": "2.6.1",
+    "@nestjs/cli": "^9.3.0",
+    "@nestjs/schematics": "^9.0.4",
+    "@nestjs/testing": "^9.3.12",
+    "supertest": "^6.3.3",
+    "ts-loader": "^9.4.2",
+    "ts-mockito": "^2.6.1",
     "ts-morph": "^17.0.1",
-    "ts-node": "10.9.1"
+    "ts-node": "^10.9.1"
   }
 }
