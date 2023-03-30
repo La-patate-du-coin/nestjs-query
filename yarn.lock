@@ -4352,6 +4352,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@la-patate-du-coin/nestjs-query-core@workspace:packages/core"
   dependencies:
+    "@nestjs/common": ^9.3.12
+    "@nestjs/core": ^9.3.12
+    "@nestjs/testing": ^9.3.12
     lodash.merge: ^4.6.2
     reflect-metadata: ^0.1.13
     tslib: ^2.5.0
@@ -4365,6 +4368,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@la-patate-du-coin/nestjs-query-graphql@workspace:packages/query-graphql"
   dependencies:
+    "@nestjs/common": ^9.3.12
+    "@nestjs/core": ^9.3.12
+    "@nestjs/graphql": ^10.2.0
+    "@nestjs/testing": ^9.3.12
     dataloader: ^2.2.2
     graphql-fields: ^2.0.3
     lodash.omit: ^4.5.0
@@ -4389,6 +4396,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@la-patate-du-coin/nestjs-query-typeorm@workspace:packages/query-typeorm"
   dependencies:
+    "@nestjs/common": ^9.3.12
+    "@nestjs/core": ^9.3.12
+    "@nestjs/testing": ^9.3.12
+    "@nestjs/typeorm": 8.0.4
     camel-case: ^4.1.2
     lodash.filter: ^4.6.0
     lodash.merge: ^4.6.2
@@ -4724,7 +4735,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/testing@npm:9.3.12":
+"@nestjs/testing@npm:9.3.12, @nestjs/testing@npm:^9.3.12":
   version: 9.3.12
   resolution: "@nestjs/testing@npm:9.3.12"
   dependencies:
