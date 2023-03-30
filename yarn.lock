@@ -350,7 +350,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@apollo/federation@npm:0.38.1":
+"@apollo/federation@npm:^0.38.1":
   version: 0.38.1
   resolution: "@apollo/federation@npm:0.38.1"
   dependencies:
@@ -363,7 +363,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@apollo/gateway@npm:2.4.0":
+"@apollo/gateway@npm:^2.4.0":
   version: 2.4.0
   resolution: "@apollo/gateway@npm:2.4.0"
   dependencies:
@@ -4562,7 +4562,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/common@npm:9.3.12":
+"@nestjs/common@npm:^9.3.12":
   version: 9.3.12
   resolution: "@nestjs/common@npm:9.3.12"
   dependencies:
@@ -4586,7 +4586,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/core@npm:9.3.12":
+"@nestjs/core@npm:^9.3.12":
   version: 9.3.12
   resolution: "@nestjs/core@npm:9.3.12"
   dependencies:
@@ -4654,15 +4654,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/jwt@npm:10.0.2":
-  version: 10.0.2
-  resolution: "@nestjs/jwt@npm:10.0.2"
+"@nestjs/jwt@npm:^10.0.3":
+  version: 10.0.3
+  resolution: "@nestjs/jwt@npm:10.0.3"
   dependencies:
     "@types/jsonwebtoken": 9.0.1
     jsonwebtoken: 9.0.0
   peerDependencies:
     "@nestjs/common": ^8.0.0 || ^9.0.0
-  checksum: e5b993c900c69112666f0e13ef0dcef0c7435f26eadcf964f0ae95d3b8bb335aedc0312d731f7505a4a5554903b9baa9d58ffccd212a3d160c882869c687cdae
+  checksum: 8c0f8184b7985adb56fba4181a390570343747a9ed740a5f282d9ad7e6c593a3351d5f507c66b38d4ef48c181feeb7344abe7067ce6fcaaecec2ec30fdf3b17c
   languageName: node
   linkType: hard
 
@@ -4683,7 +4683,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/passport@npm:9.0.3":
+"@nestjs/passport@npm:^9.0.3":
   version: 9.0.3
   resolution: "@nestjs/passport@npm:9.0.3"
   peerDependencies:
@@ -4693,7 +4693,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/platform-express@npm:9.3.12":
+"@nestjs/platform-express@npm:^9.3.12":
   version: 9.3.12
   resolution: "@nestjs/platform-express@npm:9.3.12"
   dependencies:
@@ -4743,9 +4743,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/typeorm@npm:8.0.4":
-  version: 8.0.4
-  resolution: "@nestjs/typeorm@npm:8.0.4"
+"@nestjs/typeorm@npm:^8.0.4":
+  version: 8.1.4
+  resolution: "@nestjs/typeorm@npm:8.1.4"
   dependencies:
     uuid: 8.3.2
   peerDependencies:
@@ -4753,8 +4753,8 @@ __metadata:
     "@nestjs/core": ^8.0.0
     reflect-metadata: ^0.1.13
     rxjs: ^7.2.0
-    typeorm: ^0.2.34
-  checksum: 26b66e4768c02e3dcf5bf487eedcf592ac09e0c80cba3ecba9a0429bb9268ff2b8421a6c165909d27b73e1e170c470d792d9ffc390a4f7480ef749b6f1a01a24
+    typeorm: ^0.3.0
+  checksum: 397d2c72a30ae6ceefc8ef37ac0ec84b4265be21090b3a8f4ba3ac0d480604c3edb2ec9b5b7930b6f183d3546fdc60a4213927b40672da0d6d07aaaceb37f71b
   languageName: node
   linkType: hard
 
@@ -5901,58 +5901,6 @@ __metadata:
   dependencies:
     "@types/node": "*"
   checksum: e009a2bfb50e90ca9b7c6e8f648f8464067271fd99116f881073fa6fa76dc8d0133181dd65e6614d5fb1220d671d67b0124aef7d97dc02d7e342ab143a47779d
-  languageName: node
-  linkType: hard
-
-"@types/lodash.escaperegexp@npm:4.1.7":
-  version: 4.1.7
-  resolution: "@types/lodash.escaperegexp@npm:4.1.7"
-  dependencies:
-    "@types/lodash": "*"
-  checksum: 1ae3beda9d1896f274c3343a5feffb88c3698ce24588a81c6f03ec5791ba6e21079fd2c1e1557d11290c295b27df4ca69a9f888f2dd08d3bb08300aa992508fd
-  languageName: node
-  linkType: hard
-
-"@types/lodash.filter@npm:4.6.7":
-  version: 4.6.7
-  resolution: "@types/lodash.filter@npm:4.6.7"
-  dependencies:
-    "@types/lodash": "*"
-  checksum: 32fbdd75c2cbc9a6bca318ba6c3e2bf6672d2f3678a568e9c76bd951224e569532d005f99e9b712c396acdd8228aff0e31af959a029a3091370ca9b3c6af36df
-  languageName: node
-  linkType: hard
-
-"@types/lodash.merge@npm:4.6.7":
-  version: 4.6.7
-  resolution: "@types/lodash.merge@npm:4.6.7"
-  dependencies:
-    "@types/lodash": "*"
-  checksum: 94cd6fb8e606756a28f45d63c658aacfbce11a151f7fa322c4a3e87aa50d8bf26e0ae8cba0250070a7c5a6792fc51f79abf4c648bbb1850692be386cd76cd0ca
-  languageName: node
-  linkType: hard
-
-"@types/lodash.omit@npm:4.5.7":
-  version: 4.5.7
-  resolution: "@types/lodash.omit@npm:4.5.7"
-  dependencies:
-    "@types/lodash": "*"
-  checksum: e30600de518e648f4e9590d9238506ceab561726ec2fe56b4ff29b17aa1e47cbf9188be259b7d606dfb2040998c778533ccc0c58f065cca44ab5a6dbc8b6e518
-  languageName: node
-  linkType: hard
-
-"@types/lodash.pick@npm:4.4.7":
-  version: 4.4.7
-  resolution: "@types/lodash.pick@npm:4.4.7"
-  dependencies:
-    "@types/lodash": "*"
-  checksum: 78428a83b5d85e75bd13fb632030f9adb08dfc5bde3a9b6a302434fe7ac98e62919f87a7337e0ba674017d63bc57a8855ef863f5fcecd25e63b1d39eba2e4697
-  languageName: node
-  linkType: hard
-
-"@types/lodash@npm:*":
-  version: 4.14.186
-  resolution: "@types/lodash@npm:4.14.186"
-  checksum: ee0c1368a8100bb6efb88335107473a41928fc307ff1ef4ff1278868ccddba9c04c68c36d1ffe3a0392ef4a956e1955f7de3203ec09df4f1655dd1b88485c549
   languageName: node
   linkType: hard
 
@@ -7120,7 +7068,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"apollo-server-core@npm:3.12.0, apollo-server-core@npm:^3.12.0":
+"apollo-server-core@npm:^3.12.0":
   version: 3.12.0
   resolution: "apollo-server-core@npm:3.12.0"
   dependencies:
@@ -7171,7 +7119,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"apollo-server-express@npm:3.12.0":
+"apollo-server-express@npm:^3.12.0":
   version: 3.12.0
   resolution: "apollo-server-express@npm:3.12.0"
   dependencies:
@@ -7193,7 +7141,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"apollo-server-plugin-base@npm:3.7.2, apollo-server-plugin-base@npm:^3.7.2":
+"apollo-server-plugin-base@npm:^3.7.2":
   version: 3.7.2
   resolution: "apollo-server-plugin-base@npm:3.7.2"
   dependencies:
@@ -7201,20 +7149,6 @@ __metadata:
   peerDependencies:
     graphql: ^15.3.0 || ^16.0.0
   checksum: d6ea6dbfad8bb82959286eae89878ccccbd09743c3df2b76bf790f470cbf5441ba06dcb6835a25f0bf32f4df05722cce157ae983ce32db4b69de8a72c9949e2e
-  languageName: node
-  linkType: hard
-
-"apollo-server-types@npm:3.8.0, apollo-server-types@npm:^3.8.0":
-  version: 3.8.0
-  resolution: "apollo-server-types@npm:3.8.0"
-  dependencies:
-    "@apollo/utils.keyvaluecache": ^1.0.1
-    "@apollo/utils.logger": ^1.0.0
-    apollo-reporting-protobuf: ^3.4.0
-    apollo-server-env: ^4.2.1
-  peerDependencies:
-    graphql: ^15.3.0 || ^16.0.0
-  checksum: 20accd42b65ceb95819a1610c410488fbe548ee309227d7fa22fd17dd1205e557091ba9c9a20efa532192098a4193e34eb58fc91d762b55fdf31229ac9fc7133
   languageName: node
   linkType: hard
 
@@ -7229,6 +7163,20 @@ __metadata:
   peerDependencies:
     graphql: ^15.3.0 || ^16.0.0
   checksum: ebd218e6fa8b756bb2d6954b454676907d99b8f140923b439cc1bbb200251f9df7228a9d83c5c91bb571a448cc80c2d86bc0a0eae491a4ce028e86a724cde68a
+  languageName: node
+  linkType: hard
+
+"apollo-server-types@npm:^3.8.0":
+  version: 3.8.0
+  resolution: "apollo-server-types@npm:3.8.0"
+  dependencies:
+    "@apollo/utils.keyvaluecache": ^1.0.1
+    "@apollo/utils.logger": ^1.0.0
+    apollo-reporting-protobuf: ^3.4.0
+    apollo-server-env: ^4.2.1
+  peerDependencies:
+    graphql: ^15.3.0 || ^16.0.0
+  checksum: 20accd42b65ceb95819a1610c410488fbe548ee309227d7fa22fd17dd1205e557091ba9c9a20efa532192098a4193e34eb58fc91d762b55fdf31229ac9fc7133
   languageName: node
   linkType: hard
 
@@ -8346,14 +8294,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"class-transformer@npm:0.5.1":
+"class-transformer@npm:^0.5.1":
   version: 0.5.1
   resolution: "class-transformer@npm:0.5.1"
   checksum: f191c8b4cc4239990f5efdd790cabdd852c243ed66248e39f6616a349c910c6eed2d9fd1fbf7ee6ea89f69b4f1d0b493b27347fe0cd0ae26b47c3745a805b6d3
   languageName: node
   linkType: hard
 
-"class-validator@npm:0.14.0":
+"class-validator@npm:^0.14.0":
   version: 0.14.0
   resolution: "class-validator@npm:0.14.0"
   dependencies:
@@ -9547,7 +9495,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dataloader@npm:2.2.2, dataloader@npm:^2.2.2":
+"dataloader@npm:^2.2.2":
   version: 2.2.2
   resolution: "dataloader@npm:2.2.2"
   checksum: 4dabd247089c29f194e94d5434d504f99156c5c214a03463c20f3f17f40398d7e179edee69a27c16e315519ac8739042a810090087ae26449a0e685156a02c65
@@ -10801,6 +10749,54 @@ __metadata:
   languageName: node
   linkType: hard
 
+"examples@workspace:examples":
+  version: 0.0.0-use.local
+  resolution: "examples@workspace:examples"
+  dependencies:
+    "@apollo/federation": ^0.38.1
+    "@apollo/gateway": ^2.4.0
+    "@nestjs/apollo": ^10.2.0
+    "@nestjs/cli": 9.3.0
+    "@nestjs/common": ^9.3.12
+    "@nestjs/core": ^9.3.12
+    "@nestjs/graphql": ^10.2.0
+    "@nestjs/jwt": ^10.0.3
+    "@nestjs/passport": ^9.0.3
+    "@nestjs/platform-express": ^9.3.12
+    "@nestjs/schematics": 9.0.4
+    "@nestjs/testing": 9.3.12
+    "@nestjs/typeorm": ^8.0.4
+    apollo-server-core: ^3.12.0
+    apollo-server-express: ^3.12.0
+    apollo-server-plugin-base: ^3.7.2
+    apollo-server-types: ^3.8.0
+    class-transformer: ^0.5.1
+    class-validator: ^0.14.0
+    dataloader: ^2.2.2
+    graphql: ^16.6.0
+    graphql-query-complexity: ^0.12.0
+    graphql-subscriptions: ^2.0.0
+    graphql-tools: ^8.3.19
+    mysql2: ^3.2.0
+    passport: ^0.6.0
+    passport-jwt: ^4.0.1
+    passport-local: ^1.0.0
+    pg: ^8.10.0
+    reflect-metadata: ^0.1.13
+    rxjs: ^7.8.0
+    sql-formatter: ^12.2.0
+    sqlite3: ^5.1.6
+    supertest: 6.3.3
+    ts-loader: 9.4.2
+    ts-mockito: 2.6.1
+    ts-morph: ^17.0.1
+    ts-node: 10.9.1
+    tslib: ^2.5.0
+    typeorm: 0.3.11
+    typeorm-seeding: ^1.6.1
+  languageName: unknown
+  linkType: soft
+
 "execa@npm:^4.0.2":
   version: 4.1.0
   resolution: "execa@npm:4.1.0"
@@ -11992,7 +11988,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"graphql-query-complexity@npm:0.12.0":
+"graphql-query-complexity@npm:^0.12.0":
   version: 0.12.0
   resolution: "graphql-query-complexity@npm:0.12.0"
   dependencies:
@@ -12003,7 +11999,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"graphql-subscriptions@npm:2.0.0":
+"graphql-subscriptions@npm:^2.0.0":
   version: 2.0.0
   resolution: "graphql-subscriptions@npm:2.0.0"
   dependencies:
@@ -12025,7 +12021,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"graphql-tools@npm:8.3.19":
+"graphql-tools@npm:^8.3.19":
   version: 8.3.19
   resolution: "graphql-tools@npm:8.3.19"
   dependencies:
@@ -12050,7 +12046,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"graphql@npm:16.6.0":
+"graphql@npm:^16.6.0":
   version: 16.6.0
   resolution: "graphql@npm:16.6.0"
   checksum: bf1d9e3c1938ce3c1a81e909bd3ead1ae4707c577f91cff1ca2eca474bfbc7873d5d7b942e1e9777ff5a8304421dba57a4b76d7a29eb19de8711cb70e3c2415e
@@ -15730,7 +15726,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mysql2@npm:3.2.0":
+"mysql2@npm:^3.2.0":
   version: 3.2.0
   resolution: "mysql2@npm:3.2.0"
   dependencies:
@@ -15838,22 +15834,9 @@ __metadata:
   resolution: "nestjs-query@workspace:."
   dependencies:
     "@actions/core": ^1.10.0
-    "@apollo/federation": 0.38.1
-    "@apollo/gateway": 2.4.0
     "@commitlint/cli": 17.5.0
     "@commitlint/config-conventional": ^17.4.4
     "@jscutlery/semver": 2.30.1
-    "@nestjs/apollo": ^10.2.0
-    "@nestjs/cli": 9.3.0
-    "@nestjs/common": 9.3.12
-    "@nestjs/core": 9.3.12
-    "@nestjs/graphql": ^10.2.0
-    "@nestjs/jwt": 10.0.2
-    "@nestjs/passport": 9.0.3
-    "@nestjs/platform-express": 9.3.12
-    "@nestjs/schematics": 9.0.4
-    "@nestjs/testing": 9.3.12
-    "@nestjs/typeorm": 8.0.4
     "@nrwl/eslint-plugin-nx": 15.8.8
     "@nrwl/jest": 15.8.8
     "@nrwl/js": 15.8.8
@@ -15862,11 +15845,6 @@ __metadata:
     "@nx-plus/docusaurus": ^15.0.0-rc.0
     "@types/express": 4.17.17
     "@types/jest": 29.5.0
-    "@types/lodash.escaperegexp": 4.1.7
-    "@types/lodash.filter": 4.6.7
-    "@types/lodash.merge": 4.6.7
-    "@types/lodash.omit": 4.5.7
-    "@types/lodash.pick": 4.4.7
     "@types/node": 18.15.7
     "@types/passport-jwt": 3.0.8
     "@types/passport-local": 1.0.35
@@ -15874,13 +15852,6 @@ __metadata:
     "@types/supertest": 2.0.12
     "@typescript-eslint/eslint-plugin": 5.56.0
     "@typescript-eslint/parser": 5.56.0
-    apollo-server-core: 3.12.0
-    apollo-server-express: 3.12.0
-    apollo-server-plugin-base: 3.7.2
-    apollo-server-types: 3.8.0
-    class-transformer: 0.5.1
-    class-validator: 0.14.0
-    dataloader: 2.2.2
     eslint: 8.36.0
     eslint-config-airbnb: 19.0.4
     eslint-config-airbnb-typescript: 17.0.0
@@ -15891,38 +15862,17 @@ __metadata:
     eslint-plugin-prettier: 4.2.1
     eslint-plugin-simple-import-sort: ^10.0.0
     eslint-plugin-tsdoc: 0.2.17
-    graphql: 16.6.0
-    graphql-query-complexity: 0.12.0
-    graphql-subscriptions: 2.0.0
-    graphql-tools: 8.3.19
     husky: 8.0.3
     jest: 29.5.0
     jest-extended: 3.2.4
     jest-snapshot-serializer-raw: 1.2.0
-    mysql2: 3.2.0
     ngx-deploy-npm: ^5.2.0
     nx: 15.8.8
-    passport: 0.6.0
-    passport-jwt: 4.0.1
-    passport-local: 1.0.0
-    pg: 8.10.0
     prettier: 2.8.7
-    reflect-metadata: ^0.1.13
     rimraf: 4.4.1
-    rxjs: 7.8.0
-    sql-formatter: ^12.2.0
-    sqlite3: ^5.1.6
-    supertest: 6.3.3
     ts-jest: 29.0.5
-    ts-loader: 9.4.2
-    ts-mockito: 2.6.1
-    ts-morph: ^17.0.1
-    ts-node: 10.9.1
     tsconfig-extends: 1.0.1
     tsconfig-paths: 4.1.2
-    tslib: ^2.5.0
-    typeorm: 0.3.11
-    typeorm-seeding: 1.6.1
     typescript: 4.9.4
   languageName: unknown
   linkType: soft
@@ -16729,7 +16679,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"passport-jwt@npm:4.0.1":
+"passport-jwt@npm:^4.0.1":
   version: 4.0.1
   resolution: "passport-jwt@npm:4.0.1"
   dependencies:
@@ -16739,7 +16689,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"passport-local@npm:1.0.0":
+"passport-local@npm:^1.0.0":
   version: 1.0.0
   resolution: "passport-local@npm:1.0.0"
   dependencies:
@@ -16755,7 +16705,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"passport@npm:0.6.0":
+"passport@npm:^0.6.0":
   version: 0.6.0
   resolution: "passport@npm:0.6.0"
   dependencies:
@@ -16921,7 +16871,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pg@npm:8.10.0":
+"pg@npm:^8.10.0":
   version: 8.10.0
   resolution: "pg@npm:8.10.0"
   dependencies:
@@ -18752,7 +18702,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rxjs@npm:7.8.0":
+"rxjs@npm:7.8.0, rxjs@npm:^7.8.0":
   version: 7.8.0
   resolution: "rxjs@npm:7.8.0"
   dependencies:
@@ -20593,7 +20543,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typeorm-seeding@npm:1.6.1":
+"typeorm-seeding@npm:^1.6.1":
   version: 1.6.1
   resolution: "typeorm-seeding@npm:1.6.1"
   dependencies:
