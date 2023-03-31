@@ -1,4 +1,19 @@
  
+## [2.3.3](https://github.com/La-patate-du-coin/nestjs-query/compare/v2.3.2...v2.3.3) (2023-03-31)
+
+
+### Bug Fixes
+
+* **examples:** adapt code to @nestjs/graphql v11 and @apollo/server ([c7df9c9](https://github.com/La-patate-du-coin/nestjs-query/commit/c7df9c9aabe8fc2b846fdb9a5a0257c426f350af))
+* **query-graphql:** type generic ReturnTypeFunc to avoid any ([8942b00](https://github.com/La-patate-du-coin/nestjs-query/commit/8942b00d064d12b91ef2c018babfdd98ae09972d))
+
+
+### Reverts
+
+* Revert "chore(release): v2.3.3 [skip ci]" ([274d195](https://github.com/La-patate-du-coin/nestjs-query/commit/274d19516add4ebac5725882966c6484577b501a))
+
+
+
 ## [2.3.2](https://github.com/La-patate-du-coin/nestjs-query/compare/v2.3.1...v2.3.2) (2023-03-31)
 
 
