@@ -38,9 +38,7 @@
     },
     "npm": {
       "executor": "ngx-deploy-npm:deploy",
-      "options": {
-        "noBuild": true
-      }
+      "options": {}
     }
   },
   "tags": [],
