@@ -1,5 +1,5 @@
 import { ArrayReflector, Class, FilterComparisonOperators, getPrototypeChain } from '@la-patate-du-coin/nestjs-query-core'
-import { Field, FieldOptions, ReturnTypeFunc } from '@nestjs/graphql'
+import { Field, FieldOptions, ReturnTypeFunc, ReturnTypeFuncValue } from '@nestjs/graphql'
 
 import { FILTERABLE_FIELD_KEY } from './constants'
 
@@ -13,7 +13,7 @@ export type FilterableFieldOptions = {
 export interface FilterableFieldDescriptor {
   propertyName: string
   target: Class<unknown>
-  returnTypeFunc?: ReturnTypeFunc
+  returnTypeFunc?: ReturnTypeFunc<ReturnTypeFuncValue>
   advancedOptions?: FilterableFieldOptions
 }
 
