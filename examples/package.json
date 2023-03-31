@@ -1,6 +1,6 @@
 {
   "name": "examples",
-  "version": "2.3.3",
+  "version": "2.3.2",
   "private": true,
   "dependencies": {
     "@apollo/federation": "^0.38.1",

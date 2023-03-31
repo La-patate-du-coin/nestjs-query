@@ -1,6 +1,6 @@
 {
   "name": "@la-patate-du-coin/nestjs-query-typeorm",
-  "version": "2.3.3",
+  "version": "2.3.2",
   "description": "Typeorm adapter for @la-patate-du-coin/nestjs-query-core",
   "author": "doug-martin <doug@dougamartin.com>",
   "homepage": "https://github.com/La-patate-du-coin/nestjs-query#readme",
