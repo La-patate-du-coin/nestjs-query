@@ -1,5 +1,5 @@
 import { Class, MetaValue, ValueReflector } from '@la-patate-du-coin/nestjs-query-core'
-import { Field, FieldOptions, ReturnTypeFunc } from '@nestjs/graphql'
+import { Field, FieldOptions, ReturnTypeFunc, ReturnTypeFuncValue } from '@nestjs/graphql'
 
 import { ID_FIELD_KEY } from './constants'
 import { FilterableField, FilterableFieldOptions } from './filterable-field.decorator'
@@ -12,7 +12,7 @@ export type IDFieldOptions = FilterableFieldOptions | NoFilterIDFieldOptions
 
 export interface IDFieldDescriptor {
   propertyName: string
-  returnTypeFunc: ReturnTypeFunc
+  returnTypeFunc: ReturnTypeFunc<ReturnTypeFuncValue>
 }
 
 /**
