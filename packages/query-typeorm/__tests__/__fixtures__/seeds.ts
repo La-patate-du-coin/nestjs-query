@@ -1,4 +1,4 @@
-import { Connection, getConnection, In } from 'typeorm'
+import { DataSource, In } from 'typeorm'
 
 import { RelationOfTestRelationEntity } from './relation-of-test-relation.entity'
 import { TestEntity } from './test.entity'
@@ -69,12 +69,12 @@ export const TEST_RELATIONS_OF_RELATION = TEST_RELATIONS.map<Partial<RelationOfT
   testRelationId: testRelation.testRelationPk
 })) as RelationOfTestRelationEntity[]
 
-export const seed = async (connection: Connection = getConnection()): Promise<void> => {
-  const testEntityRepo = connection.getRepository(TestEntity)
-  const testRelationRepo = connection.getRepository(TestRelation)
-  const relationOfTestRelationRepo = connection.getRepository(RelationOfTestRelationEntity)
-  const testSoftDeleteRepo = connection.getRepository(TestSoftDeleteEntity)
-  const testSoftDeleteRelationRepo = connection.getRepository(TestSoftDeleteRelation)
+export const seed = async (dataSource: DataSource): Promise<void> => {
+  const testEntityRepo = dataSource.getRepository(TestEntity)
+  const testRelationRepo = dataSource.getRepository(TestRelation)
+  const relationOfTestRelationRepo = dataSource.getRepository(RelationOfTestRelationEntity)
+  const testSoftDeleteRepo = dataSource.getRepository(TestSoftDeleteEntity)
+  const testSoftDeleteRelationRepo = dataSource.getRepository(TestSoftDeleteRelation)
 
   const testEntities = await testEntityRepo.save(TEST_ENTITIES.map((e: TestEntity) => ({ ...e })))
 
