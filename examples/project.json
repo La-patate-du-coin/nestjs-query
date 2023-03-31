@@ -18,6 +18,10 @@
         "jestConfig": "jest.e2e.ts",
         "runInBand": true
       }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {}
     }
   },
   "tags": [],
