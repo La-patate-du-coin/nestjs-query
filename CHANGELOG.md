@@ -1,4 +1,8 @@
  
+## [2.3.3](https://github.com/La-patate-du-coin/nestjs-query/compare/v2.3.2...v2.3.3) (2023-03-31)
+
+
+
 ## [2.3.2](https://github.com/La-patate-du-coin/nestjs-query/compare/v2.3.1...v2.3.2) (2023-03-31)
 
 
