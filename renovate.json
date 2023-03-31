@@ -1,21 +1,83 @@
 {
-  "extends": [
-    "config:base"
-  ],
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:base"],
   "packageRules": [
     {
-      "depTypeList": [
-        "devDependencies"
-      ],
+      "groupName": "root dependencies",
+      "groupSlug": "root-all",
+      "matchPaths": ["./**"],
       "automerge": true
     },
     {
-      "paths": [
-        "examples/**"
-      ],
+      "groupName": "core major dependencies",
+      "groupSlug": "core-major",
+      "matchPaths": ["packages/core/**"],
+      "matchUpdateTypes": ["major"],
+      "automerge": true
+    },
+    {
+      "groupName": "core non-major dependencies",
+      "groupSlug": "core-non-major",
+      "matchPaths": ["packages/core/**"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    },
+    {
+      "groupName": "query-graphql major dependencies",
+      "groupSlug": "query-graphql-major",
+      "matchPaths": ["packages/query-graphql/**"],
+      "matchUpdateTypes": ["major"],
+      "automerge": true
+    },
+    {
+      "groupName": "query-graphql non-major dependencies",
+      "groupSlug": "query-graphql-non-major",
+      "matchPaths": ["packages/query-graphql/**"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    },
+    {
+      "groupName": "query-typeorm major dependencies",
+      "groupSlug": "query-typeorm-major",
+      "matchPaths": ["packages/query-typeorm/**"],
+      "matchUpdateTypes": ["major"],
+      "automerge": true
+    },
+    {
+      "groupName": "query-typeorm non-major dependencies",
+      "groupSlug": "query-typeorm-non-major",
+      "matchPaths": ["packages/query-typeorm/**"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    },
+    {
+      "groupName": "documentation dependencies",
+      "groupSlug": "documentation-all",
+      "matchPaths": ["documentation/**"],
+      "automerge": true
+    },
+    {
+      "groupName": "examples major dependencies",
+      "groupSlug": "examples-major",
+      "matchManagers": ["npm"],
+      "matchPaths": ["examples/**"],
+      "matchUpdateTypes": ["major"],
+      "automerge": true
+    },
+    {
+      "groupName": "examples non-major dependencies",
+      "groupSlug": "examples-non-major",
+      "matchManagers": ["npm"],
+      "matchPaths": ["examples/**"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    },
+    {
+      "groupName": "examples Docker dependencies",
+      "groupSlug": "examples-docker",
+      "matchManagers": ["docker"],
+      "matchPaths": ["examples/**"],
       "automerge": true
     }
-  ],
-  "ignorePaths": [
   ]
 }
