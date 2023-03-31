@@ -73,9 +73,9 @@
       "automerge": true
     },
     {
-      "groupName": "examples Docker dependencies",
-      "groupSlug": "examples-docker",
-      "matchManagers": ["docker"],
+      "groupName": "examples docker compose dependencies",
+      "groupSlug": "examples-docker-compose",
+      "matchManagers": ["docker-compose"],
       "matchPaths": ["examples/**"],
       "automerge": true
     }
